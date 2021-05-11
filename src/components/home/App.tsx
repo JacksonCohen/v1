@@ -2,7 +2,7 @@ import React from 'react';
 import Contact from './Contact';
 import Footer from './Footer';
 import Header from './Header';
-import Nav from './Nav';
+import Navbar from './Navbar';
 import Projects from './Projects';
 import Skills from './Skills';
 
@@ -10,7 +10,7 @@ const App = () => {
   return (
     <div>
       <Header />
-      <Nav />
+      <Navbar active={''} />
       <Skills />
       <Projects />
       <Contact />
