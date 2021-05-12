@@ -4,14 +4,23 @@ const Nav = styled('nav', {
   alignItems: 'center',
   display: 'flex',
   flexDirection: 'row',
+  background: 'lightslategray',
+  borderBottom: '3px black solid',
+  height: '50px',
+  width: '100%',
+  textTransform: 'uppercase',
 });
 
-const Item = styled('div', {
+const NavLink = styled('div', {
   display: 'inline',
   fontSize: 'initial',
   margin: '0 20px',
   padding: 'initial',
   cursor: 'pointer',
+  color: 'white',
+  '&:hover': {
+    color: 'teal',
+  },
 });
 
 interface NavProps {
@@ -21,10 +30,10 @@ interface NavProps {
 const Navbar = ({ active }: NavProps) => {
   return (
     <Nav>
-      <Item>Home</Item>
-      <Item>About</Item>
-      <Item>Portfolio</Item>
-      <Item>Contact</Item>
+      <NavLink>Home</NavLink>
+      <NavLink>About</NavLink>
+      <NavLink>Portfolio</NavLink>
+      <NavLink>Contact</NavLink>
     </Nav>
   );
 };
