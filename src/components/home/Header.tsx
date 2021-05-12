@@ -35,6 +35,7 @@ const CallToAction = styled('button', {
     backgroundColor: 'teal',
   },
   padding: '10px 10px',
+  cursor: 'pointer',
 });
 
 const Header = () => {
