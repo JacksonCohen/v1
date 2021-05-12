@@ -1,7 +1,7 @@
 import Contact from './Contact';
 import Footer from './Footer';
 import Header from './Header';
-import Nav from './Nav';
+import Navbar from './Navbar';
 import Projects from './Projects';
 import About from './About';
 import { global } from '@stitches/react';
@@ -16,7 +16,7 @@ const App = () => {
   return (
     <div>
       <Header />
-      <Nav />
+      <Navbar active={''} />
       <About />
       <Projects />
       <Contact />
