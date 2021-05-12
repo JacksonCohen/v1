@@ -1,17 +1,23 @@
-import React from 'react';
 import Contact from './Contact';
 import Footer from './Footer';
 import Header from './Header';
 import Navbar from './Navbar';
 import Projects from './Projects';
-import Skills from './Skills';
+import About from './About';
+import { global } from '@stitches/react';
+
+const globalStyles = global({
+  '*': { margin: 0, padding: 0 },
+});
 
 const App = () => {
+  globalStyles();
+
   return (
     <div>
       <Header />
       <Navbar active={''} />
-      <Skills />
+      <About />
       <Projects />
       <Contact />
       <Footer />
