@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@stitches/react": "^0.1.9",
+    "emailjs-com": "^2.6.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
