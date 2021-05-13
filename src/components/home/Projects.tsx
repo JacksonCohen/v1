@@ -19,7 +19,7 @@ const Title = styled('h2', {
   textTransform: 'uppercase',
 });
 
-const Projects = () => {
+const Projects = ({ element }) => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
@@ -38,7 +38,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <Section id='projects'>
+    <Section id='projects' ref={element}>
       <Wrapper>
         <Title>Projects</Title>
 

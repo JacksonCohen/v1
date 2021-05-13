@@ -5,20 +5,22 @@ import Navbar from './Navbar';
 import Projects from './Projects';
 import About from './About';
 import { global } from '@stitches/react';
+import { useSticky } from 'src/utils/useSticky';
 
 const globalStyles = global({
   '*': { margin: 0, padding: 0, fontFamily: 'Open Sans' },
 });
 
 const App = () => {
+  const { isSticky, element } = useSticky();
   globalStyles();
 
   return (
     <div>
       <Header />
-      <Navbar active={''} />
+      <Navbar sticky={isSticky} active={''} />
       <About />
-      <Projects />
+      <Projects element={element} />
       <Contact />
       <Footer />
     </div>
