@@ -24,7 +24,7 @@ const ProjectsContainer = styled('div', {
   justifyContent: 'center',
   alignItems: 'center',
   flexWrap: 'wrap',
-  width: '33%',
+  width: '66%',
 });
 
 const Projects = () => {

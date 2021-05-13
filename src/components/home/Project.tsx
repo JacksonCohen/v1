@@ -1,6 +1,8 @@
 import { styled } from '@stitches/react';
+import Button from '../shared/Button';
 
 const Wrapper = styled('div', {
+  position: 'relative',
   width: '33%',
 });
 
@@ -8,13 +10,41 @@ const Image = styled('img', {
   width: '100%',
 });
 
-const ProjectInfo = styled('div', {});
+const ProjectInfo = styled('div', {
+  position: 'absolute',
+  top: '0',
+  display: 'flex',
+  // visibility: 'hidden',
+  flexDirection: 'column',
+  justifyContent: 'space-around',
+  alignItems: 'center',
+  height: '100%',
+  width: '100%',
+  textAlign: 'center',
+  '&:hover': {
+    transition: '.5s ease-in-out, .5s opacity 600ms, visibility 600ms',
+    backgroundColor: 'white',
+    visibility: 'visible',
+    opacity: 1,
+  },
+});
 
-const Name = styled('div', {});
+const InfoGroup = styled('div', {});
 
-const Technologies = styled('div', {});
+const Name = styled('div', {
+  fontSize: '1.2rem',
+  fontWeight: '700',
+});
 
-const Button = styled('div', {});
+const Technologies = styled('div', {
+  color: 'teal',
+});
+
+const LearnMore = styled(Button, {
+  borderColor: 'teal',
+  color: 'black',
+  width: '50%',
+});
 
 interface ProjectProps {
   name: string;
@@ -37,10 +67,12 @@ const Project = ({
       <Image src={images[0]} />
 
       <ProjectInfo>
-        <Name>{name}</Name>
-        <Technologies>{technologies}</Technologies>
+        <InfoGroup>
+          <Name>{name}</Name>
+          <Technologies>{technologies.join(' / ')}</Technologies>
+        </InfoGroup>
 
-        <Button>Learn More</Button>
+        <LearnMore>Learn More</LearnMore>
       </ProjectInfo>
     </Wrapper>
   );
