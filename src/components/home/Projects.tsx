@@ -19,6 +19,14 @@ const Title = styled('h2', {
   textTransform: 'uppercase',
 });
 
+const ProjectsContainer = styled('div', {
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  flexWrap: 'wrap',
+  width: '33%',
+});
+
 const Projects = () => {
   const [projects, setProjects] = useState([]);
 
@@ -42,9 +50,11 @@ const Projects = () => {
       <Wrapper>
         <Title>Projects</Title>
 
-        {projects.map((project) => (
-          <Project data={project} />
-        ))}
+        <ProjectsContainer>
+          {projects.map((project) => (
+            <Project data={project} />
+          ))}
+        </ProjectsContainer>
       </Wrapper>
     </Section>
   );
