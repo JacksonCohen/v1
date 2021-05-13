@@ -7,7 +7,7 @@ import About from './About';
 import { global } from '@stitches/react';
 
 const globalStyles = global({
-  '*': { margin: 0, padding: 0 },
+  '*': { margin: 0, padding: 0, fontFamily: 'Open Sans' },
 });
 
 const App = () => {

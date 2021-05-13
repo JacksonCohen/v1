@@ -35,7 +35,9 @@ const Form = styled('form', {
 
 const Input = styled('input', {});
 
-const Textarea = styled('textarea', {});
+const Textarea = styled('textarea', {
+  fontFamily: 'monospace',
+});
 
 const Submit = styled('button', {
   color: 'white',
@@ -105,7 +107,7 @@ const Contact = () => {
   };
 
   return (
-    <Section>
+    <Section id='contact'>
       <Wrapper>
         <Title>Contact</Title>
 
