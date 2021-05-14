@@ -26,6 +26,7 @@ const NavLink = styled('div', {
   padding: 'initial',
   cursor: 'pointer',
   color: 'white',
+  transition: 'color .33s',
   '&:hover': {
     color: 'teal',
   },
