@@ -1,8 +1,11 @@
-import { keyframes, styled } from '@stitches/react';
+import { styled } from '@stitches/react';
 
-const moveDown = keyframes({
-  '0%': { transform: 'translateY(-5rem)' },
-  '1000%': { transform: 'translateY(0rem)' },
+const Sticky = styled('div', {
+  position: 'sticky',
+  top: 0,
+  left: 0,
+  right: 0,
+  zIndex: 10,
 });
 
 const Nav = styled('nav', {
@@ -14,14 +17,6 @@ const Nav = styled('nav', {
   height: '50px',
   width: '100%',
   textTransform: 'uppercase',
-  '&.sticky': {
-    background: '#333',
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    boxShadow: '1px 1px 1px #222',
-    animation: `${moveDown} 0.5s ease-in-out`,
-  },
 });
 
 const NavLink = styled('div', {
@@ -34,21 +29,25 @@ const NavLink = styled('div', {
   '&:hover': {
     color: 'teal',
   },
+  '&.selected': {
+    color: 'teal',
+  },
 });
 
 interface NavProps {
-  sticky: boolean;
-  active: string;
+  section: string;
 }
 
-const Navbar = ({ sticky, active }: NavProps) => {
+const Navbar = ({ section }: NavProps) => {
   return (
-    <Nav className={sticky ? 'sticky' : ''}>
-      <NavLink>Home</NavLink>
-      <NavLink>About</NavLink>
-      <NavLink>Portfolio</NavLink>
-      <NavLink>Contact</NavLink>
-    </Nav>
+    <Sticky>
+      <Nav>
+        <NavLink>Home</NavLink>
+        <NavLink className={section === 'About' ? 'selected' : ''}>About</NavLink>
+        <NavLink className={section === 'Projects' ? 'selected' : ''}>Portfolio</NavLink>
+        <NavLink className={section === 'Contact' ? 'selected' : ''}>Contact</NavLink>
+      </Nav>
+    </Sticky>
   );
 };
 
