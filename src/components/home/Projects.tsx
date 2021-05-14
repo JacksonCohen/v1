@@ -19,6 +19,14 @@ const Title = styled('h2', {
   textTransform: 'uppercase',
 });
 
+const ProjectsContainer = styled('div', {
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  flexWrap: 'wrap',
+  width: '66%',
+});
+
 interface ProjectsProps {
   projectsRef: MutableRefObject<any>;
 }
@@ -46,9 +54,11 @@ const Projects = ({ projectsRef }: ProjectsProps) => {
       <Wrapper>
         <Title>Projects</Title>
 
-        {projects.map((project) => (
-          <Project data={project} />
-        ))}
+        <ProjectsContainer>
+          {projects.map((project) => (
+            <Project data={project} />
+          ))}
+        </ProjectsContainer>
       </Wrapper>
     </Section>
   );
