@@ -42,7 +42,7 @@ const Projects = ({ projectsRef }: ProjectsProps) => {
   }, []);
 
   return (
-    <Section id='projects' ref={projectsRef}>
+    <Section id='portfolio' ref={projectsRef}>
       <Wrapper>
         <Title>Projects</Title>
 
