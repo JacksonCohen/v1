@@ -38,9 +38,9 @@ const CallToAction = styled('button', {
   cursor: 'pointer',
 });
 
-const Header = () => {
+const Header = ({ homeRef }) => {
   return (
-    <Wrapper>
+    <Wrapper ref={homeRef}>
       <HeroContent>
         <HeroMessage>
           Hi, my name is <Highlight>Jackson Cohen</Highlight>.

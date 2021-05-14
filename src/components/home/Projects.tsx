@@ -20,10 +20,10 @@ const Title = styled('h2', {
 });
 
 interface ProjectsProps {
-  element: MutableRefObject<any>;
+  projectsRef: MutableRefObject<any>;
 }
 
-const Projects = ({ element }: ProjectsProps) => {
+const Projects = ({ projectsRef }: ProjectsProps) => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
@@ -42,7 +42,7 @@ const Projects = ({ element }: ProjectsProps) => {
   }, []);
 
   return (
-    <Section id='projects' ref={element}>
+    <Section id='projects' ref={projectsRef}>
       <Wrapper>
         <Title>Projects</Title>
 
