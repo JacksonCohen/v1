@@ -4,6 +4,12 @@ import Button from '../shared/Button';
 const Wrapper = styled('div', {
   position: 'relative',
   width: '33%',
+  '&:hover > div': {
+    transition: '.2s linear',
+    backgroundColor: 'white',
+    visibility: 'visible',
+    opacity: '1',
+  },
 });
 
 const Image = styled('img', {
@@ -14,19 +20,13 @@ const ProjectInfo = styled('div', {
   position: 'absolute',
   top: '0',
   display: 'flex',
-  // visibility: 'hidden',
+  visibility: 'hidden',
   flexDirection: 'column',
   justifyContent: 'space-around',
   alignItems: 'center',
   height: '100%',
   width: '100%',
   textAlign: 'center',
-  '&:hover': {
-    transition: '.5s ease-in-out, .5s opacity 600ms, visibility 600ms',
-    backgroundColor: 'white',
-    visibility: 'visible',
-    opacity: 1,
-  },
 });
 
 const InfoGroup = styled('div', {});
@@ -38,6 +38,7 @@ const Name = styled('div', {
 
 const Technologies = styled('div', {
   color: 'teal',
+  fontSize: '.8rem',
 });
 
 const LearnMore = styled(Button, {
