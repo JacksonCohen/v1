@@ -1,7 +1,7 @@
 import React from 'react';
 
 const About = () => {
-  return <div></div>;
+  return <section id='about'></section>;
 };
 
 export default About;

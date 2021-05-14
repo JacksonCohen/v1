@@ -38,7 +38,7 @@ const Projects = ({ element }) => {
   }, []);
 
   return (
-    <Section id='projects' ref={element}>
+    <Section id='portfolio' ref={element}>
       <Wrapper>
         <Title>Projects</Title>
 
