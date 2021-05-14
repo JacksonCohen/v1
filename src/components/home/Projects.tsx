@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { MutableRefObject, useEffect, useState } from 'react';
 import Project from './Project';
 import { styled } from '@stitches/react';
 
@@ -27,7 +27,11 @@ const ProjectsContainer = styled('div', {
   width: '66%',
 });
 
-const Projects = () => {
+interface ProjectsProps {
+  projectsRef: MutableRefObject<any>;
+}
+
+const Projects = ({ projectsRef }: ProjectsProps) => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
@@ -46,7 +50,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <Section id='projects'>
+    <Section id='portfolio' ref={projectsRef}>
       <Wrapper>
         <Title>Projects</Title>
 
