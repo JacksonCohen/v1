@@ -1,4 +1,5 @@
 import { styled } from '@stitches/react';
+import { scrollTo } from 'src/utils/scrollTo';
 
 const Section = styled('section', {
   height: '100vh',
@@ -54,7 +55,7 @@ const Header = ({ homeRef }) => {
           <br />
           I'm a software engineer.
         </HeroMessage>
-        <CallToAction>
+        <CallToAction onClick={() => scrollTo('portfolio')}>
           View my work <i className='fas fa-arrow-right'></i>
         </CallToAction>
       </Wrapper>
