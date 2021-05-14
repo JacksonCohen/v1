@@ -1,4 +1,5 @@
 import { keyframes, styled } from '@stitches/react';
+import { scrollTo } from 'src/utils/scrollTo';
 
 const spin = keyframes({
   from: { transform: 'rotate(0deg)' },
@@ -71,7 +72,7 @@ const Footer = () => {
     <Wrapper>
       <BackToTop
         src='https://img.icons8.com/metro/26/000000/double-up.png'
-        // onClick={() => scrollTo('home')}
+        onClick={() => scrollTo('home')}
       />
       <IconBar>
         <IconLink href='https://www.linkedin.com/in/jacksonrcohen/'>
