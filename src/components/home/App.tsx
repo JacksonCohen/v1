@@ -18,7 +18,7 @@ const App = () => {
   return (
     <div>
       <Header />
-      <Navbar sticky={isSticky} active={''} />
+      <Navbar />
       <About />
       <Projects element={element} />
       <Contact />
