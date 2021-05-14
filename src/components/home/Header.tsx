@@ -24,8 +24,8 @@ const HeroMessage = styled('div', {
 });
 
 const Highlight = styled('span', {
+  color: '#538083',
   fontWeight: 700,
-  color: 'teal',
 });
 
 const CallToAction = styled('button', {
@@ -43,7 +43,7 @@ const CallToAction = styled('button', {
     },
   },
   '&:hover': {
-    background: 'teal',
+    background: '#538083',
     '& i': {
       transition: '.5s',
       transform: 'rotate(90deg)',
@@ -61,7 +61,7 @@ const Header = ({ homeRef }) => {
           I'm a software engineer.
         </HeroMessage>
         <CallToAction onClick={() => scrollTo('portfolio')}>
-          View my work <i className='fas fa-arrow-right'></i>
+          View my work <i className='fas fa-arrow-right' />
         </CallToAction>
       </Wrapper>
     </Section>

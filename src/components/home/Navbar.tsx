@@ -29,7 +29,7 @@ const NavLink = styled('div', {
   color: 'white',
   transition: 'color .33s',
   '&:hover': {
-    color: 'teal',
+    color: '#538083',
   },
   '&.selected': {
     color: 'teal',

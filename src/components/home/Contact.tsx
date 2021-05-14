@@ -23,7 +23,7 @@ const Title = styled('h2', {
 
 const Subtitle = styled('div', {
   fontSize: '1rem',
-  color: 'teal',
+  color: '#538083',
 });
 
 const Form = styled('form', {
@@ -45,7 +45,7 @@ const Submit = styled('button', {
   border: '1px white solid',
   borderRadius: '1px',
   '&:hover': {
-    backgroundColor: 'teal',
+    backgroundColor: '#538083',
   },
   padding: '10px 10px',
   textTransform: 'uppercase',
