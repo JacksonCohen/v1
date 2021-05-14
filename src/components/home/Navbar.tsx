@@ -1,5 +1,13 @@
 import { styled } from '@stitches/react';
 
+const Sticky = styled('div', {
+  position: 'sticky',
+  top: 0,
+  left: 0,
+  right: 0,
+  zIndex: 10,
+});
+
 const Nav = styled('nav', {
   alignItems: 'center',
   display: 'flex',
@@ -18,23 +26,29 @@ const NavLink = styled('div', {
   padding: 'initial',
   cursor: 'pointer',
   color: 'white',
+  transition: 'color .33s',
   '&:hover': {
+    color: 'teal',
+  },
+  '&.selected': {
     color: 'teal',
   },
 });
 
 interface NavProps {
-  active: string;
+  section: string;
 }
 
-const Navbar = ({ active }: NavProps) => {
+const Navbar = ({ section }: NavProps) => {
   return (
-    <Nav>
-      <NavLink>Home</NavLink>
-      <NavLink>About</NavLink>
-      <NavLink>Portfolio</NavLink>
-      <NavLink>Contact</NavLink>
-    </Nav>
+    <Sticky>
+      <Nav>
+        <NavLink>Home</NavLink>
+        <NavLink className={section === 'About' ? 'selected' : ''}>About</NavLink>
+        <NavLink className={section === 'Projects' ? 'selected' : ''}>Portfolio</NavLink>
+        <NavLink className={section === 'Contact' ? 'selected' : ''}>Contact</NavLink>
+      </Nav>
+    </Sticky>
   );
 };
 
