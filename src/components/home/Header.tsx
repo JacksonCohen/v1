@@ -23,6 +23,7 @@ const HeroMessage = styled('div', {
 });
 
 const Highlight = styled('span', {
+  fontWeight: 700,
   color: 'teal',
 });
 
@@ -31,11 +32,17 @@ const CallToAction = styled('button', {
   background: 'none',
   border: '1px white solid',
   borderRadius: '1px',
-  '&:hover': {
-    backgroundColor: 'teal',
-  },
   padding: '10px 10px',
   cursor: 'pointer',
+  transition: '.5s ease-out',
+  // TODO: Animate arrow returning back to starting position
+  '&:hover': {
+    background: 'teal',
+    '& i': {
+      transition: '.5s',
+      transform: 'rotate(90deg)',
+    },
+  },
 });
 
 const Header = ({ homeRef }) => {
