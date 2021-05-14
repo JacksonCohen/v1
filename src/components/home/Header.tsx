@@ -36,7 +36,12 @@ const CallToAction = styled('button', {
   padding: '10px 10px',
   cursor: 'pointer',
   transition: '.5s ease-out',
-  // TODO: Animate arrow returning back to starting position
+  '&:not(:hover)': {
+    '& i': {
+      transition: '.5s',
+      transform: 'rotate(0deg)',
+    },
+  },
   '&:hover': {
     background: 'teal',
     '& i': {
