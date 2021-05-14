@@ -19,7 +19,7 @@ const NavLink = styled('div', {
   cursor: 'pointer',
   color: 'white',
   '&:hover': {
-    color: 'teal',
+    color: '#538083',
   },
 });
 

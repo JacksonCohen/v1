@@ -23,7 +23,7 @@ const HeroMessage = styled('div', {
 });
 
 const Highlight = styled('span', {
-  color: 'teal',
+  color: '#538083',
 });
 
 const CallToAction = styled('button', {
@@ -32,7 +32,7 @@ const CallToAction = styled('button', {
   border: '1px white solid',
   borderRadius: '1px',
   '&:hover': {
-    backgroundColor: 'teal',
+    backgroundColor: '#538083',
   },
   padding: '10px 10px',
   cursor: 'pointer',
@@ -48,7 +48,7 @@ const Header = () => {
           I'm a software engineer.
         </HeroMessage>
         <CallToAction>
-          View my work <i className='fas fa-arrow-right'></i>
+          View my work <i className='fas fa-arrow-right' />
         </CallToAction>
       </HeroContent>
     </Wrapper>
