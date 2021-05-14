@@ -1,4 +1,5 @@
 import { styled } from '@stitches/react';
+import { scrollTo } from 'src/utils/scrollTo';
 
 const Sticky = styled('div', {
   position: 'sticky',
@@ -43,10 +44,25 @@ const Navbar = ({ section }: NavProps) => {
   return (
     <Sticky>
       <Nav>
-        <NavLink>Home</NavLink>
-        <NavLink className={section === 'About' ? 'selected' : ''}>About</NavLink>
-        <NavLink className={section === 'Projects' ? 'selected' : ''}>Portfolio</NavLink>
-        <NavLink className={section === 'Contact' ? 'selected' : ''}>Contact</NavLink>
+        <NavLink onClick={() => scrollTo('home')}>Home</NavLink>
+        <NavLink
+          onClick={() => scrollTo('about')}
+          className={section === 'About' ? 'selected' : ''}
+        >
+          About
+        </NavLink>
+        <NavLink
+          onClick={() => scrollTo('portfolio')}
+          className={section === 'Projects' ? 'selected' : ''}
+        >
+          Portfolio
+        </NavLink>
+        <NavLink
+          onClick={() => scrollTo('contact')}
+          className={section === 'Contact' ? 'selected' : ''}
+        >
+          Contact
+        </NavLink>
       </Nav>
     </Sticky>
   );
