@@ -23,6 +23,7 @@ const HeroMessage = styled('div', {
 });
 
 const Highlight = styled('span', {
+  fontWeight: 700,
   color: 'teal',
 });
 
@@ -31,10 +32,15 @@ const CallToAction = styled('button', {
   background: 'none',
   border: '1px white solid',
   borderRadius: '1px',
+  padding: '10px 10px',
+  cursor: 'pointer',
   '&:hover': {
     backgroundColor: 'teal',
+    '& i': {
+      transition: 'transform .5s',
+      transform: 'rotate(90deg)',
+    },
   },
-  padding: '10px 10px',
 });
 
 const Header = () => {
