@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { MutableRefObject, useEffect, useState } from 'react';
 import Project from './Project';
 import { styled } from '@stitches/react';
 
@@ -19,7 +19,19 @@ const Title = styled('h2', {
   textTransform: 'uppercase',
 });
 
-const Projects = () => {
+const ProjectsContainer = styled('div', {
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  flexWrap: 'wrap',
+  width: '66%',
+});
+
+interface ProjectsProps {
+  projectsRef: MutableRefObject<any>;
+}
+
+const Projects = ({ projectsRef }: ProjectsProps) => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
@@ -38,13 +50,15 @@ const Projects = () => {
   }, []);
 
   return (
-    <Section id='projects'>
+    <Section id='portfolio' ref={projectsRef}>
       <Wrapper>
         <Title>Projects</Title>
 
-        {projects.map((project) => (
-          <Project data={project} />
-        ))}
+        <ProjectsContainer>
+          {projects.map((project) => (
+            <Project data={project} />
+          ))}
+        </ProjectsContainer>
       </Wrapper>
     </Section>
   );

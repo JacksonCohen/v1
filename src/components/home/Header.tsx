@@ -1,6 +1,7 @@
 import { styled } from '@stitches/react';
+import { scrollTo } from 'src/utils/scrollTo';
 
-const Wrapper = styled('div', {
+const Section = styled('section', {
   height: '100vh',
   display: 'flex',
   justifyContent: 'center',
@@ -8,7 +9,7 @@ const Wrapper = styled('div', {
   background: 'black',
 });
 
-const HeroContent = styled('div', {
+const Wrapper = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
@@ -24,6 +25,7 @@ const HeroMessage = styled('div', {
 
 const Highlight = styled('span', {
   color: '#538083',
+  fontWeight: 700,
 });
 
 const CallToAction = styled('button', {
@@ -31,27 +33,38 @@ const CallToAction = styled('button', {
   background: 'none',
   border: '1px white solid',
   borderRadius: '1px',
-  '&:hover': {
-    backgroundColor: '#538083',
-  },
   padding: '10px 10px',
   cursor: 'pointer',
+  transition: '.5s ease-out',
+  '&:not(:hover)': {
+    '& i': {
+      transition: '.5s',
+      transform: 'rotate(0deg)',
+    },
+  },
+  '&:hover': {
+    background: '#538083',
+    '& i': {
+      transition: '.5s',
+      transform: 'rotate(90deg)',
+    },
+  },
 });
 
-const Header = () => {
+const Header = ({ homeRef }) => {
   return (
-    <Wrapper>
-      <HeroContent>
+    <Section id='home' ref={homeRef}>
+      <Wrapper>
         <HeroMessage>
           Hi, my name is <Highlight>Jackson Cohen</Highlight>.
           <br />
           I'm a software engineer.
         </HeroMessage>
-        <CallToAction>
+        <CallToAction onClick={() => scrollTo('portfolio')}>
           View my work <i className='fas fa-arrow-right' />
         </CallToAction>
-      </HeroContent>
-    </Wrapper>
+      </Wrapper>
+    </Section>
   );
 };
 

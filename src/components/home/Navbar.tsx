@@ -1,4 +1,13 @@
 import { styled } from '@stitches/react';
+import { scrollTo } from 'src/utils/scrollTo';
+
+const Sticky = styled('div', {
+  position: 'sticky',
+  top: 0,
+  left: 0,
+  right: 0,
+  zIndex: 10,
+});
 
 const Nav = styled('nav', {
   alignItems: 'center',
@@ -18,23 +27,44 @@ const NavLink = styled('div', {
   padding: 'initial',
   cursor: 'pointer',
   color: 'white',
+  transition: 'color .33s',
   '&:hover': {
     color: '#538083',
+  },
+  '&.selected': {
+    color: 'teal',
   },
 });
 
 interface NavProps {
-  active: string;
+  section: string;
 }
 
-const Navbar = ({ active }: NavProps) => {
+const Navbar = ({ section }: NavProps) => {
   return (
-    <Nav>
-      <NavLink>Home</NavLink>
-      <NavLink>About</NavLink>
-      <NavLink>Portfolio</NavLink>
-      <NavLink>Contact</NavLink>
-    </Nav>
+    <Sticky>
+      <Nav>
+        <NavLink onClick={() => scrollTo('home')}>Home</NavLink>
+        <NavLink
+          onClick={() => scrollTo('about')}
+          className={section === 'About' ? 'selected' : ''}
+        >
+          About
+        </NavLink>
+        <NavLink
+          onClick={() => scrollTo('portfolio')}
+          className={section === 'Projects' ? 'selected' : ''}
+        >
+          Portfolio
+        </NavLink>
+        <NavLink
+          onClick={() => scrollTo('contact')}
+          className={section === 'Contact' ? 'selected' : ''}
+        >
+          Contact
+        </NavLink>
+      </Nav>
+    </Sticky>
   );
 };
 

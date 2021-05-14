@@ -1,9 +1,54 @@
 [
   {
-    "name": "",
-    "technologies": [],
-    "images": [],
+    "name": "AoE II Companion App",
+    "technologies": ["TypeScript", "React", "Next", "MongoDB"],
+    "images": ["https://via.placeholder.com/1400x1000"],
+    "repo": "https://github.com/JacksonCohen/aoe2-companion-app",
     "link": "",
     "description": ""
+  },
+  {
+    "name": "AoE Ladder Bot",
+    "technologies": ["Node", "Discord.js"],
+    "images": ["https://via.placeholder.com/1400x1000"],
+    "repo": "https://github.com/JacksonCohen/aoe-ladder-bot",
+    "description": ""
+  },
+  {
+    "name": "GitHub Directory",
+    "technologies": ["TypeScript", "React", "Redux", "styled components", "Jest"],
+    "images": ["https://via.placeholder.com/1400x1000"],
+    "repo": "https://github.com/JacksonCohen/github-directory",
+    "description": ""
+  },
+  {
+    "name": "NFL Bad Boys",
+    "technologies": ["React", "Node", "Express", "SQLite"],
+    "images": ["https://via.placeholder.com/1400x1000"],
+    "repo": "https://github.com/JacksonCohen/nfl-bad-boys",
+    "link": "https://nfl-bad-boys.herokuapp.com",
+    "description": ""
+  },
+  {
+    "name": "Minesweeper",
+    "technologies": ["React"],
+    "images": ["https://via.placeholder.com/1400x1000"],
+    "repo": "https://github.com/JacksonCohen/minesweeper",
+    "description": ""
+  },
+  {
+    "name": "Air Bed 'n Breakfast Reviews",
+    "technologies": ["React", "Express", "Webpack", "SQLite", "Jest", "Enzyme"],
+    "images": ["https://via.placeholder.com/1400x1000"],
+    "repo": "https://github.com/JacksonCohen/reviews-service",
+    "link": "https://airbnb-reviews.herokuapp.com/1",
+    "description": "Microservice built as a replica of the reviews component on Airbnb.com. It provides a seamless, SPA experience with interactive elements. Test any property ID from 1 - 100!"
+  },
+  {
+    "name": "Zeelow Gallery",
+    "technologies": ["SQLite", "MongoDB", "Nginx", "Docker", "New Relic"],
+    "images": ["https://via.placeholder.com/1400x1000"],
+    "repo": "https://github.com/JacksonCohen/gallery-service",
+    "description": "Improvement on legacy code to scale back end in order to deal with enormous increase in traffic. Migrated to a more robust and scalable MongoDB database alongside other enhancements."
   }
 ]

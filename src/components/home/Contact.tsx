@@ -1,5 +1,5 @@
 import { styled } from '@stitches/react';
-import { ChangeEvent, useReducer } from 'react';
+import { ChangeEvent, MutableRefObject, useReducer } from 'react';
 import emailjs from 'emailjs-com';
 
 const Section = styled('section', {
@@ -35,7 +35,9 @@ const Form = styled('form', {
 
 const Input = styled('input', {});
 
-const Textarea = styled('textarea', {});
+const Textarea = styled('textarea', {
+  fontFamily: 'monospace',
+});
 
 const Submit = styled('button', {
   color: 'white',
@@ -49,6 +51,10 @@ const Submit = styled('button', {
   textTransform: 'uppercase',
   marginLeft: 'auto',
 });
+
+interface ContactProps {
+  contactRef: MutableRefObject<any>;
+}
 
 interface State {
   name: string;
@@ -64,7 +70,7 @@ const initialState = {
 
 const stateReducer = (state: State, newState: any) => ({ ...state, ...newState });
 
-const Contact = () => {
+const Contact = ({ contactRef }: ContactProps) => {
   const [userInput, setUserInput] = useReducer(stateReducer, initialState);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
@@ -105,7 +111,7 @@ const Contact = () => {
   };
 
   return (
-    <Section>
+    <Section id='contact' ref={contactRef}>
       <Wrapper>
         <Title>Contact</Title>
 
