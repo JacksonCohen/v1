@@ -1,4 +1,9 @@
-import { styled } from '@stitches/react';
+import { keyframes, styled } from '@stitches/react';
+
+const moveDown = keyframes({
+  '0%': { transform: 'translateY(-5rem)' },
+  '1000%': { transform: 'translateY(0rem)' },
+});
 
 const Nav = styled('nav', {
   alignItems: 'center',
@@ -9,6 +14,14 @@ const Nav = styled('nav', {
   height: '50px',
   width: '100%',
   textTransform: 'uppercase',
+  '&.sticky': {
+    background: '#333',
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    boxShadow: '1px 1px 1px #222',
+    animation: `${moveDown} 0.5s ease-in-out`,
+  },
 });
 
 const NavLink = styled('div', {
@@ -24,12 +37,13 @@ const NavLink = styled('div', {
 });
 
 interface NavProps {
+  sticky: boolean;
   active: string;
 }
 
-const Navbar = ({ active }: NavProps) => {
+const Navbar = ({ sticky, active }: NavProps) => {
   return (
-    <Nav>
+    <Nav className={sticky ? 'sticky' : ''}>
       <NavLink>Home</NavLink>
       <NavLink>About</NavLink>
       <NavLink>Portfolio</NavLink>
