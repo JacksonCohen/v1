@@ -1,6 +1,6 @@
 import { styled } from '@stitches/react';
 
-const Wrapper = styled('div', {
+const Section = styled('section', {
   height: '100vh',
   display: 'flex',
   justifyContent: 'center',
@@ -8,7 +8,7 @@ const Wrapper = styled('div', {
   background: 'black',
 });
 
-const HeroContent = styled('div', {
+const Wrapper = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
@@ -38,10 +38,10 @@ const CallToAction = styled('button', {
   cursor: 'pointer',
 });
 
-const Header = () => {
+const Header = ({ homeRef }) => {
   return (
-    <Wrapper>
-      <HeroContent>
+    <Section id='home' ref={homeRef}>
+      <Wrapper>
         <HeroMessage>
           Hi, my name is <Highlight>Jackson Cohen</Highlight>.
           <br />
@@ -50,8 +50,8 @@ const Header = () => {
         <CallToAction>
           View my work <i className='fas fa-arrow-right'></i>
         </CallToAction>
-      </HeroContent>
-    </Wrapper>
+      </Wrapper>
+    </Section>
   );
 };
 
