@@ -43,6 +43,7 @@ const Image = styled('img', {
 
 const Header = styled('div', {
   padding: '20px',
+  fontWeight: 700,
 });
 
 const Footer = styled('div', {
@@ -59,6 +60,7 @@ const Body = styled('div', {
   padding: '20px',
   borderTop: '1px solid #eee',
   borderBottom: '1px solid #eee',
+  fontWeight: 300,
 });
 
 const Close = styled('button', {
@@ -70,6 +72,9 @@ const Close = styled('button', {
   border: 'none',
   cursor: 'pointer',
   fontSize: '1.2rem',
+  '& i::before': {
+    content: '\u00d7',
+  },
 });
 
 interface ModalProps {
@@ -108,7 +113,7 @@ const Modal = ({ title, image, show, handleClose, children, footerButtons }: Mod
           <Footer>
             {footerButtons?.map((button) => button)}
             <Close onClick={handleClose}>
-              <i className='fas fa-times'></i>
+              <i className='fa fa-times-thin fa-2x' aria-hidden='true'></i>
             </Close>
           </Footer>
         </Content>
