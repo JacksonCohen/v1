@@ -1,10 +1,12 @@
 import { MutableRefObject, useEffect, useState } from 'react';
 import Project from './Project';
 import { styled } from '@stitches/react';
+import { Title, TitleBar } from '../shared';
 
 const Section = styled('section', {
   padding: '100px 0',
   position: 'relative',
+  backgroundColor: '#e1e2ef',
 });
 
 const Wrapper = styled('div', {
@@ -12,11 +14,6 @@ const Wrapper = styled('div', {
   justifyContent: 'center',
   alignItems: 'center',
   flexDirection: 'column',
-});
-
-const Title = styled('h2', {
-  fontSize: '1.8rem',
-  textTransform: 'uppercase',
 });
 
 const ProjectsContainer = styled('div', {
@@ -53,6 +50,7 @@ const Projects = ({ projectsRef }: ProjectsProps) => {
     <Section id='portfolio' ref={projectsRef}>
       <Wrapper>
         <Title>Projects</Title>
+        <TitleBar />
 
         <ProjectsContainer>
           {projects.map((project) => (
