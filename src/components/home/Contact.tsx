@@ -1,6 +1,6 @@
 import { ChangeEvent, MutableRefObject, useReducer } from 'react';
 import { Title as SharedTitle, TitleBar as SharedTitleBar } from '../shared';
-import { styled } from '@stitches/react';
+import { styled } from 'src/stitches.config';
 import emailjs from 'emailjs-com';
 
 const Section = styled('section', {

@@ -1,4 +1,4 @@
-import { keyframes, styled } from '@stitches/react';
+import { styled, keyframes } from 'src/stitches.config';
 import { scrollTo } from 'src/utils/scrollTo';
 
 const spin = keyframes({

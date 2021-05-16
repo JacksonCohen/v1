@@ -1,6 +1,6 @@
 import { MutableRefObject, useEffect, useState } from 'react';
 import Project from './Project';
-import { styled } from '@stitches/react';
+import { styled } from 'src/stitches.config';
 import { Title, TitleBar } from '../shared';
 
 const Section = styled('section', {

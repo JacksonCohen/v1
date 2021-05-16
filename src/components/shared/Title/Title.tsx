@@ -1,4 +1,4 @@
-import { keyframes, styled } from '@stitches/react';
+import { styled, keyframes } from 'src/stitches.config';
 
 const slideRight = keyframes({
   from: { transform: 'translateX(-100%)' },

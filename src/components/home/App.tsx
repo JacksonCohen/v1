@@ -5,7 +5,7 @@ import Header from './Header';
 import Navbar from './Navbar';
 import Projects from './Projects';
 import About from './About';
-import { global } from '@stitches/react';
+import { global } from 'src/stitches.config';
 import { useSticky } from 'src/utils/useSticky';
 
 const globalStyles = global({

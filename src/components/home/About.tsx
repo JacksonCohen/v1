@@ -1,4 +1,4 @@
-import { styled } from '@stitches/react';
+import { styled } from 'src/stitches.config';
 import { MutableRefObject } from 'react';
 import { Title, TitleBar } from '../shared';
 
