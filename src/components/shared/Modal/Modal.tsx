@@ -1,7 +1,7 @@
 import { MouseEvent, ReactChild, useEffect } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { createPortal } from 'react-dom';
-import { styled } from '@stitches/react';
+import { styled } from 'src/stitches.config';
 
 const Wrapper = styled('div', {
   position: 'fixed',

@@ -1,4 +1,4 @@
-import { styled } from '@stitches/react';
+import { styled } from 'src/stitches.config';
 import { scrollTo } from 'src/utils/scrollTo';
 
 const Section = styled('section', {
