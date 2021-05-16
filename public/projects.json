@@ -4,22 +4,21 @@
     "technologies": ["TypeScript", "React", "Next", "MongoDB"],
     "images": ["https://via.placeholder.com/1400x1000"],
     "repo": "https://github.com/JacksonCohen/aoe2-companion-app",
-    "link": "",
-    "description": ""
+    "description": "AoE II Companion App provides different tools, statistics, and crowd-sourced data for the game Age of Empires II: Definitive Edition to enhance the playing experience. It is a server-side rendered app built with TypeScript and React on the Next platform."
   },
   {
     "name": "AoE Ladder Bot",
     "technologies": ["Node", "Discord.js"],
     "images": ["https://via.placeholder.com/1400x1000"],
     "repo": "https://github.com/JacksonCohen/aoe-ladder-bot",
-    "description": ""
+    "description": "AoE Ladder Bot is a Discord bot that works with several APIs to provide statistics and data on players of the game Age of Empires II: Definitive Edition."
   },
   {
     "name": "GitHub Directory",
     "technologies": ["TypeScript", "React", "Redux", "styled components", "Jest"],
     "images": ["https://via.placeholder.com/1400x1000"],
     "repo": "https://github.com/JacksonCohen/github-directory",
-    "description": ""
+    "description": "GitHub Directory is an interactive and responsive GitHub directory built with the GitHub API. Users are able to login using OAuth, populate the directory via authenticated requests for various criteria, and perform other tasks such as making updates to their own profile fields. It was built with TypeScript, React, and Redux."
   },
   {
     "name": "NFL Bad Boys",
@@ -27,14 +26,14 @@
     "images": ["https://via.placeholder.com/1400x1000"],
     "repo": "https://github.com/JacksonCohen/nfl-bad-boys",
     "link": "https://nfl-bad-boys.herokuapp.com",
-    "description": ""
+    "description": "NFL Bad Boys is a repository for the easy look-up of public arrest data for current NFL players. It was built with React and Node and backed with a SQLite database to reduce API calls. It indexes autocompleted results for increased search speed."
   },
   {
     "name": "Minesweeper",
     "technologies": ["React"],
     "images": ["https://via.placeholder.com/1400x1000"],
     "repo": "https://github.com/JacksonCohen/minesweeper",
-    "description": ""
+    "description": "Minesweeper is an identical recreation of the classic Windows game Minesweeper's functionality and styling, complete with board resizing and scoring."
   },
   {
     "name": "Air Bed 'n Breakfast Reviews",
@@ -42,13 +41,13 @@
     "images": ["https://via.placeholder.com/1400x1000"],
     "repo": "https://github.com/JacksonCohen/reviews-service",
     "link": "https://airbnb-reviews.herokuapp.com/1",
-    "description": "Microservice built as a replica of the reviews component on Airbnb.com. It provides a seamless, SPA experience with interactive elements. Test any property ID from 1 - 100!"
+    "description": "Air Bed 'n Breakfast Reviews is a microservice built as a replica of the reviews component on Airbnb.com. It provides a seamless, SPA experience with interactive elements. Test any property ID from 1 - 100!"
   },
   {
     "name": "Zeelow Gallery",
     "technologies": ["SQLite", "MongoDB", "Nginx", "Docker", "New Relic"],
     "images": ["https://via.placeholder.com/1400x1000"],
     "repo": "https://github.com/JacksonCohen/gallery-service",
-    "description": "Improvement on legacy code to scale back end in order to deal with enormous increase in traffic. Migrated to a more robust and scalable MongoDB database alongside other enhancements."
+    "description": "Zeelow Gallery is an improvement on legacy code to scale back end in order to deal with enormous increase in traffic. It includes a migration to a more robust and scalable MongoDB database alongside other enhancements."
   }
 ]
