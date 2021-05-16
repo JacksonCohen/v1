@@ -35,11 +35,9 @@ export function useSticky(refs: SectionRef[], { visibleSection, setVisibleSectio
 
       const selected = refs.find(({ section, ref }) => {
         const element = ref.current;
-        if (element) {
-          const { offsetBottom, offsetTop } = getDimensions(element);
-          // TODO: Return true if at the end of current section
-          return scrollPosition > offsetTop && scrollPosition < offsetBottom;
-        }
+        const { offsetBottom, offsetTop } = getDimensions(element);
+        // TODO: Return true if at the end of current section
+        return scrollPosition > offsetTop && scrollPosition < offsetBottom;
       });
 
       if (selected && selected.section !== visibleSection) {
