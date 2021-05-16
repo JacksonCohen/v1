@@ -11,10 +11,10 @@ const slideLeft = keyframes({
 });
 
 const Title = styled('h2', {
-  fontSize: '2.5rem',
+  fontSize: '$f5',
   textTransform: 'uppercase',
   paddingBottom: '10px',
-  color: '#232c33',
+  color: '$dark1',
   '&.slide-right': {
     animation: `${slideRight} .5s`,
   },
@@ -23,7 +23,7 @@ const Title = styled('h2', {
 export const TitleBar = styled('div', {
   width: '70px',
   height: '4px',
-  background: '#232c33',
+  background: '$dark1',
   '&.slide-left': {
     animation: `${slideLeft} 1s`,
   },

@@ -16,7 +16,7 @@ const Triangle = styled('div', {
   marginBottom: '100px',
   borderLeft: '50vw solid transparent',
   borderRight: '50vw solid transparent',
-  borderTop: '100px solid#e1e2ef',
+  borderTop: '100px solid $light0',
 });
 
 const Wrapper = styled('div', {
@@ -27,17 +27,17 @@ const Wrapper = styled('div', {
 });
 
 const Title = styled(SharedTitle, {
-  color: '#e1e2ef',
+  color: '$light0',
 });
 
 const TitleBar = styled(SharedTitleBar, {
   marginBottom: '25px',
-  background: '#e1e2ef',
+  background: '$light0',
 });
 
 const Subtitle = styled('div', {
-  fontSize: '1rem',
-  color: '#007cc6',
+  fontSize: '$f1',
+  color: '$accent1',
   marginBottom: '25px',
 });
 
@@ -57,7 +57,7 @@ const Form = styled('form', {
 });
 
 const Input = styled('input', {
-  backgroundColor: '#232c33',
+  backgroundColor: '$dark1',
   color: '#d8d8f6',
   border: 'none',
   padding: '8px 5px',
@@ -66,7 +66,7 @@ const Input = styled('input', {
 
 const Textarea = styled('textarea', {
   fontFamily: 'monospace',
-  backgroundColor: '#232c33',
+  backgroundColor: '$dark1',
   color: '#d8d8f6',
   border: 'none',
   padding: '10px 5px',
@@ -75,9 +75,9 @@ const Textarea = styled('textarea', {
 });
 
 const Submit = styled('button', {
-  color: '#e1e2ef',
+  color: '$light0',
   background: 'none',
-  border: '1px #007cc6 solid',
+  border: '1px $accent1 solid',
   borderRadius: '2px',
   padding: '10px 20px',
   width: '25%',
@@ -86,7 +86,7 @@ const Submit = styled('button', {
   marginLeft: 'auto',
   cursor: 'pointer',
   '&:hover': {
-    backgroundColor: '#007cc6',
+    backgroundColor: '$accent1',
   },
 });
 

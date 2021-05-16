@@ -13,8 +13,8 @@ const Nav = styled('nav', {
   alignItems: 'center',
   display: 'flex',
   flexDirection: 'row',
-  background: '#232c33',
-  borderBottom: '3px #007cc6 solid',
+  background: '$dark1',
+  borderBottom: '3px $accent1 solid',
   height: '50px',
   width: '100%',
   textTransform: 'uppercase',
@@ -26,13 +26,13 @@ const NavLink = styled('div', {
   margin: '0 20px',
   padding: 'initial',
   cursor: 'pointer',
-  color: '#ebe9e9',
+  color: '$light1',
   transition: 'color .33s',
   '&:hover': {
-    color: '#ffa600',
+    color: '$accent0',
   },
   '&.selected': {
-    color: '#ffa600',
+    color: '$accent0',
   },
 });
 

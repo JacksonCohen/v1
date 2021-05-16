@@ -6,7 +6,7 @@ const Section = styled('section', {
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  background: '#373850',
+  background: '$dark0',
 });
 
 const Wrapper = styled('div', {
@@ -18,20 +18,20 @@ const Wrapper = styled('div', {
 const HeroMessage = styled('div', {
   textAlign: 'center',
   fontFamily: 'Open Sans',
-  color: '#ebe9e9',
-  fontSize: '2rem',
+  color: '$light1',
+  fontSize: '$f4',
   margin: '0 0 15px 0',
 });
 
 const Highlight = styled('span', {
-  color: '#ffa600',
+  color: '$accent0',
   fontWeight: 700,
 });
 
 const CallToAction = styled('button', {
   color: 'white',
   background: 'none',
-  border: '1px #ebe9e9 solid',
+  border: '1px $light1 solid',
   borderRadius: '1px',
   padding: '10px 10px',
   cursor: 'pointer',
@@ -43,7 +43,7 @@ const CallToAction = styled('button', {
     },
   },
   '&:hover': {
-    background: '#007cc6',
+    background: '$accent1',
     '& i': {
       transition: '.5s',
       transform: 'rotate(90deg)',

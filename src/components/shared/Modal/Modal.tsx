@@ -53,7 +53,7 @@ const Footer = styled('div', {
 
 const Title = styled('div', {
   margin: '0',
-  fontSize: '1.4rem',
+  fontSize: '$f3',
 });
 
 const Body = styled('div', {
@@ -71,7 +71,7 @@ const Close = styled('button', {
   padding: '0',
   border: 'none',
   cursor: 'pointer',
-  fontSize: '1.2rem',
+  fontSize: '$f2',
   '& i::before': {
     content: '\u00d7',
   },

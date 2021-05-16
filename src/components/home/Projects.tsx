@@ -6,7 +6,7 @@ import { Title, TitleBar } from '../shared';
 const Section = styled('section', {
   padding: '100px 0',
   position: 'relative',
-  backgroundColor: '#e1e2ef',
+  backgroundColor: '$light0',
 });
 
 const Wrapper = styled('div', {

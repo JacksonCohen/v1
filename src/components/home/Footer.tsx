@@ -13,7 +13,7 @@ const pulse = keyframes({
 });
 
 const Wrapper = styled('footer', {
-  background: '#232c33',
+  background: '$dark1',
   display: 'flex',
   justifyContent: 'space-evenly',
   alignItems: 'center',
@@ -28,7 +28,7 @@ const BackToTop = styled('img', {
   top: '-25px',
   padding: '10px',
   borderRadius: '2px',
-  backgroundColor: '#ffa600',
+  backgroundColor: '$accent0',
   cursor: 'pointer',
   '&:hover': {
     animation: `${pulse} 2s`,
@@ -43,7 +43,7 @@ const IconBar = styled('div', {
 });
 
 const IconLink = styled('a', {
-  backgroundColor: '#e1e2ef',
+  backgroundColor: '$light0',
   padding: '10px 15px',
   borderRadius: '2px',
   margin: '0 20px',
@@ -55,17 +55,17 @@ const IconLink = styled('a', {
 });
 
 const Icon = styled('div', {
-  fontSize: '1.5rem',
-  color: '#232c33',
+  fontSize: '$f3',
+  color: '$dark1',
 });
 
 const FooterInfo = styled('div', {
   textTransform: 'uppercase',
-  color: '#e1e2ef',
+  color: '$light0',
 });
 
 const Highlight = styled('span', {
-  color: '#ffa600',
+  color: '$accent0',
 });
 
 const Footer = () => {

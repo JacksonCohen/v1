@@ -18,7 +18,7 @@ const Wrapper = styled('div', {
   '&:hover': {
     '& > div:nth-child(2)': {
       transition: '.2s linear',
-      backgroundColor: '#e1e2ef',
+      backgroundColor: '$light0',
       visibility: 'visible',
       opacity: '1',
       '& div': {
@@ -52,40 +52,40 @@ const ProjectInfo = styled('div', {
 const InfoGroup = styled('div', {});
 
 const Name = styled('div', {
-  fontSize: '1.2rem',
+  fontSize: '$f2',
   fontWeight: '700',
-  color: '#232c33',
+  color: '$dark1',
 });
 
 const Technologies = styled('div', {
-  color: '#007cc6',
-  fontSize: '.8rem',
+  color: '$accent1',
+  fontSize: '$f0',
 });
 
 const LearnMore = styled(Button, {
-  borderColor: '#007cc6',
-  color: '#232c33',
+  borderColor: '$accent1',
+  color: '$dark1',
   width: '50%',
   '&:hover': {
-    color: '#ebe9e9',
-    backgroundColor: '#007cc6',
+    color: '$light1',
+    backgroundColor: '$accent1',
   },
 });
 
 const FooterLink = styled('a', {
-  color: '#e1e2ef',
-  backgroundColor: '#232c33',
+  color: '$light0',
+  backgroundColor: '$dark1',
   borderRadius: '1px',
   padding: '10px 15px',
   cursor: 'pointer',
-  fontSize: '.8rem',
+  fontSize: '$f0',
   textDecoration: 'none',
   transition: '.25s',
   marginRight: '10px',
-  border: '1px #232c33 solid',
+  border: '1px $dark1 solid',
   '&:hover': {
-    color: '#232c33',
-    background: '#e1e2ef',
+    color: '$dark1',
+    background: '$light0',
   },
   '& i': {
     paddingRight: '5px',
