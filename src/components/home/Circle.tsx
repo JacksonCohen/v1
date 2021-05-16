@@ -1,4 +1,4 @@
-const colors = ['#e1e2ef', '#ebe9e9', '#232c33', '#ffa600', '#007cc6'];
+const colors = ['#e1e2ef', '#ebe9e9', '#373850', '#232c33', '#ffa600', '#007cc6'];
 const maxRadius = 40;
 
 interface Mouse {
