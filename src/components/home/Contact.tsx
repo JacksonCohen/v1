@@ -1,11 +1,22 @@
-import { styled } from '@stitches/react';
 import { ChangeEvent, MutableRefObject, useReducer } from 'react';
+import { Title as SharedTitle, TitleBar as SharedTitleBar } from '../shared';
+import { styled } from '@stitches/react';
 import emailjs from 'emailjs-com';
 
 const Section = styled('section', {
   padding: '100px 0',
   position: 'relative',
-  background: 'black',
+  background: '#444550',
+});
+
+const Triangle = styled('div', {
+  width: 0,
+  height: 0,
+  marginTop: '-100px',
+  marginBottom: '100px',
+  borderLeft: '50vw solid transparent',
+  borderRight: '50vw solid transparent',
+  borderTop: '100px solid#e1e2ef',
 });
 
 const Wrapper = styled('div', {
@@ -15,15 +26,19 @@ const Wrapper = styled('div', {
   flexDirection: 'column',
 });
 
-const Title = styled('h2', {
-  fontSize: '1.8rem',
-  textTransform: 'uppercase',
-  color: 'white',
+const Title = styled(SharedTitle, {
+  color: '#e1e2ef',
+});
+
+const TitleBar = styled(SharedTitleBar, {
+  marginBottom: '25px',
+  background: '#e1e2ef',
 });
 
 const Subtitle = styled('div', {
   fontSize: '1rem',
-  color: '#538083',
+  color: '#007cc6',
+  marginBottom: '25px',
 });
 
 const Form = styled('form', {
@@ -31,25 +46,48 @@ const Form = styled('form', {
   justifyContent: 'center',
   flexDirection: 'column',
   width: '33%',
+  // '& .g-recaptcha': {
+  //   transform: 'scale(2)',
+  //   transformOrigin: '0 0',
+  // },
+  // '& .rc-anchor-light': {
+  //   background: '#000 !important',
+  //   color: '#000 !important',
+  // },
 });
 
-const Input = styled('input', {});
+const Input = styled('input', {
+  backgroundColor: '#232c33',
+  color: '#d8d8f6',
+  border: 'none',
+  padding: '8px 5px',
+  marginBottom: '2px',
+});
 
 const Textarea = styled('textarea', {
   fontFamily: 'monospace',
+  backgroundColor: '#232c33',
+  color: '#d8d8f6',
+  border: 'none',
+  padding: '10px 5px',
+  marginBottom: '5px',
+  resize: 'vertical',
 });
 
 const Submit = styled('button', {
-  color: 'white',
+  color: '#e1e2ef',
   background: 'none',
-  border: '1px white solid',
-  borderRadius: '1px',
-  '&:hover': {
-    backgroundColor: '#538083',
-  },
-  padding: '10px 10px',
+  border: '1px #007cc6 solid',
+  borderRadius: '2px',
+  padding: '10px 20px',
+  width: '25%',
+  height: '10%',
   textTransform: 'uppercase',
   marginLeft: 'auto',
+  cursor: 'pointer',
+  '&:hover': {
+    backgroundColor: '#007cc6',
+  },
 });
 
 interface ContactProps {
@@ -112,8 +150,10 @@ const Contact = ({ contactRef }: ContactProps) => {
 
   return (
     <Section id='contact' ref={contactRef}>
+      <Triangle />
       <Wrapper>
         <Title>Contact</Title>
+        <TitleBar />
 
         <Subtitle>Have a question or want to work together? I'd love to hear from you!</Subtitle>
 
@@ -135,14 +175,15 @@ const Contact = ({ contactRef }: ContactProps) => {
           <Textarea
             placeholder='Your message'
             name='message'
+            rows={5}
             value={userInput.message}
             onChange={handleChange}
             required
           />
-          <div
+          {/* <div
             className='g-recaptcha'
             data-sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
-          ></div>
+          ></div> */}
 
           <Submit type='submit' onClick={sendEmail}>
             Submit

@@ -1,10 +1,14 @@
 import { keyframes, styled } from '@stitches/react';
 import { useState } from 'react';
-import Button from '../shared/Button';
-import Modal from '../shared/Modal';
+import { Button, Modal } from '../shared/';
 
 const slideDown = keyframes({
-  from: { transform: 'translateY(-100%)' },
+  from: { transform: 'translateY(-25%)' },
+  to: { transform: 'translateY(0)' },
+});
+
+const slideUp = keyframes({
+  from: { transform: 'translateY(25%)' },
   to: { transform: 'translateY(0)' },
 });
 
@@ -14,15 +18,22 @@ const Wrapper = styled('div', {
   '&:hover': {
     '& > div:nth-child(2)': {
       transition: '.2s linear',
-      backgroundColor: 'white',
+      backgroundColor: '#e1e2ef',
       visibility: 'visible',
       opacity: '1',
+      '& div': {
+        animation: `${slideDown} .5s`,
+      },
+      '& button': {
+        animation: `${slideUp} .5s`,
+      },
     },
   },
 });
 
 const Image = styled('img', {
   width: '100%',
+  display: 'block',
 });
 
 const ProjectInfo = styled('div', {
@@ -38,30 +49,32 @@ const ProjectInfo = styled('div', {
   textAlign: 'center',
 });
 
-const InfoGroup = styled('div', {
-  // transform: 'translateX(-100%)',
-});
+const InfoGroup = styled('div', {});
 
 const Name = styled('div', {
   fontSize: '1.2rem',
   fontWeight: '700',
+  color: '#232c33',
 });
 
 const Technologies = styled('div', {
-  color: 'teal',
+  color: '#007cc6',
   fontSize: '.8rem',
 });
 
 const LearnMore = styled(Button, {
-  borderColor: 'teal',
-  color: 'black',
+  borderColor: '#007cc6',
+  color: '#232c33',
   width: '50%',
+  '&:hover': {
+    color: '#ebe9e9',
+    backgroundColor: '#007cc6',
+  },
 });
 
 const FooterLink = styled('a', {
-  color: 'white',
-  background: 'teal',
-  border: '1px white solid',
+  color: '#e1e2ef',
+  backgroundColor: '#232c33',
   borderRadius: '1px',
   padding: '10px 15px',
   cursor: 'pointer',
@@ -69,9 +82,10 @@ const FooterLink = styled('a', {
   textDecoration: 'none',
   transition: '.25s',
   marginRight: '10px',
+  border: '1px #232c33 solid',
   '&:hover': {
-    color: 'teal',
-    backgroundColor: 'white',
+    color: '#232c33',
+    background: '#e1e2ef',
   },
   '& i': {
     paddingRight: '5px',
