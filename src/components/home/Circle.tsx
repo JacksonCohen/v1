@@ -1,4 +1,4 @@
-const colors = ['#e1e2ef', '#ebe9e9', '#373850', '#232c33', '#ffa600', '#007cc6'];
+const colors = ['#e1e2efa8', '#ebe9e9a8', '#373850a8', '#232c33a8', '#ffa600a8', '#007cc6a8'];
 const maxRadius = 40;
 
 interface Mouse {
@@ -39,7 +39,9 @@ export default class Circle {
 
   draw() {
     this.c.beginPath();
-    this.c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+    this.c.arc(this.x, this.y, 5, 0, Math.PI * 2, false);
+    // this.c.shadowColor = this.color;
+    // this.c.shadowBlur = 20;
     this.c.fillStyle = this.color;
     this.c.fill();
   }
