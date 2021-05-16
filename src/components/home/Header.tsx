@@ -65,7 +65,7 @@ const Header = ({ homeRef }) => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    const c = canvas.getContext('2d');
+    const c = canvas.getContext('2d', { alpha: false });
     const mouse = {
       x: undefined,
       y: undefined,
@@ -75,12 +75,12 @@ const Header = ({ homeRef }) => {
     const init = () => {
       circles = [];
 
-      for (let i = 0; i < 100; i++) {
+      for (let i = 0; i < 40; i++) {
         const radius = Math.random() * 10 + 2;
         let x = Math.random() * (window.innerWidth - radius * 2) + radius;
         let y = Math.random() * (window.innerHeight - radius * 2) + radius;
-        let dx = Math.random() - 0.5 * 3;
-        let dy = Math.random() - 0.5 * 3;
+        let dx = Math.random() - 0.5 * 5;
+        let dy = Math.random() - 0.5 * 5;
 
         const circle = new Circle(c, x, y, dx, dy, radius, mouse);
         circles.push(circle);
@@ -106,6 +106,7 @@ const Header = ({ homeRef }) => {
       init();
     });
 
+    // setInterval(init, 2000);
     init();
     animate();
   };

@@ -1,7 +1,14 @@
-const colors = ['#e1e2efa8', '#ebe9e9a8', '#373850a8', '#232c33a8', '#ffa600a8', '#007cc6a8'];
-const maxRadius = 40;
+const colors = [
+  'rgba(225, 226, 239, .66)',
+  'rgba(235, 233, 233, .66)',
+  'rgba(55, 56, 80, .66)',
+  'rgba(35, 44, 51, .66)',
+  'rgba(255, 166, 0, .66)',
+  'rgba(0, 124, 198, .66)',
+];
+const trailLength = 8;
 
-interface Mouse {
+interface Coords {
   x: number | undefined;
   y: number | undefined;
 }
@@ -14,8 +21,9 @@ export default class Circle {
   dy: number; // y velocity
   radius: number;
   minRadius: number;
+  positions: Coords[];
   color: string;
-  mouse: Mouse;
+  mouse: Coords;
 
   constructor(
     context: CanvasRenderingContext2D,
@@ -24,7 +32,7 @@ export default class Circle {
     dx: number,
     dy: number,
     radius: number,
-    mouse: Mouse
+    mouse: Coords
   ) {
     this.c = context;
     this.x = x;
@@ -34,16 +42,27 @@ export default class Circle {
     this.radius = radius;
     this.mouse = mouse;
     this.minRadius = radius;
+    this.positions = [];
     this.color = colors[Math.floor(Math.random() * colors.length)];
   }
 
-  draw() {
+  draw(ratio?) {
+    let color = this.color.split(', ');
+    for (let i = 0; i < this.positions.length; i++) {
+      const ratio = (i + 1) / this.positions.length;
+      color[color.length - 1] = ratio + ')';
+      this.c.beginPath();
+      this.c.arc(this.positions[i].x, this.positions[i].y, 5, 0, Math.PI * 2, false);
+      this.c.fillStyle = color.join(', ');
+      this.c.fill();
+    }
+
     this.c.beginPath();
     this.c.arc(this.x, this.y, 5, 0, Math.PI * 2, false);
-    // this.c.shadowColor = this.color;
-    // this.c.shadowBlur = 20;
     this.c.fillStyle = this.color;
     this.c.fill();
+
+    this.storePosition(this.x, this.y);
   }
 
   update() {
@@ -58,18 +77,23 @@ export default class Circle {
     this.y += this.dy;
 
     if (
-      this.mouse.x - this.x < 50 &&
-      this.mouse.x - this.x > -50 &&
-      this.mouse.y - this.y < 50 &&
-      this.mouse.y - this.y > -50
+      this.mouse.x - this.x < 100 &&
+      this.mouse.x - this.x > -100 &&
+      this.mouse.y - this.y < 100 &&
+      this.mouse.y - this.y > -100
     ) {
-      if (this.radius < maxRadius) {
-        this.radius += 1;
-      }
-    } else if (this.radius > this.minRadius) {
-      this.radius -= 1;
+      this.dx = -this.dx;
+      this.dy = -this.dy;
     }
 
     this.draw();
+  }
+
+  storePosition(x: number, y: number) {
+    this.positions.push({ x, y });
+
+    if (this.positions.length > trailLength) {
+      this.positions.shift();
+    }
   }
 }
