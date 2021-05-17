@@ -2,7 +2,12 @@
   {
     "name": "AoE II Companion App",
     "technologies": ["TypeScript", "React", "Next", "MongoDB"],
-    "images": ["https://via.placeholder.com/1400x1000"],
+    "images": [
+      "./images/aoe-2-companion-app/build-order.png",
+      "./images/aoe-2-companion-app/guides.png",
+      "./images/aoe-2-companion-app/open-guide.png",
+      "./images/aoe-2-companion-app/randomizer.png"
+    ],
     "repo": "https://github.com/JacksonCohen/aoe2-companion-app",
     "description": "AoE II Companion App provides different tools, statistics, and crowd-sourced data for the game Age of Empires II: Definitive Edition to enhance the playing experience. It is a server-side rendered app built with TypeScript and React on the Next platform."
   },
@@ -23,7 +28,7 @@
   {
     "name": "NFL Bad Boys",
     "technologies": ["React", "Node", "Express", "SQLite"],
-    "images": ["https://via.placeholder.com/1400x1000"],
+    "images": ["./images/nfl-bad-boys/home.png"],
     "repo": "https://github.com/JacksonCohen/nfl-bad-boys",
     "link": "https://nfl-bad-boys.herokuapp.com",
     "description": "NFL Bad Boys is a repository for the easy look-up of public arrest data for current NFL players. It was built with React and Node and backed with a SQLite database to reduce API calls. It indexes autocompleted results for increased search speed."
@@ -31,7 +36,11 @@
   {
     "name": "Minesweeper",
     "technologies": ["React"],
-    "images": ["https://via.placeholder.com/1400x1000"],
+    "images": [
+      "./images/minesweeper/new-game.png",
+      "./images/minesweeper/in-progress.png",
+      "./images/minesweeper/lose.png"
+    ],
     "repo": "https://github.com/JacksonCohen/minesweeper",
     "description": "Minesweeper is an identical recreation of the classic Windows game Minesweeper's functionality and styling, complete with board resizing and scoring."
   },
