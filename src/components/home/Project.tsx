@@ -116,7 +116,7 @@ const Project = ({
     if (repo) {
       footerButtons.push(
         <FooterLink href={repo} target='_blank' rel='noopener noreferrer'>
-          <i className='fas fa-external-link-alt'></i>
+          <i className='fas fa-external-link-alt' />
           View Repo
         </FooterLink>
       );
@@ -125,7 +125,7 @@ const Project = ({
     if (link) {
       footerButtons.push(
         <FooterLink href={link} target='_blank' rel='noopener noreferrer'>
-          <i className='fas fa-external-link-alt'></i>
+          <i className='fas fa-external-link-alt' />
           View App
         </FooterLink>
       );

@@ -53,8 +53,8 @@ const Projects = ({ projectsRef }: ProjectsProps) => {
         <TitleBar />
 
         <ProjectsContainer>
-          {projects.map((project) => (
-            <Project data={project} />
+          {projects.map((project, index) => (
+            <Project data={project} key={index} />
           ))}
         </ProjectsContainer>
       </Wrapper>

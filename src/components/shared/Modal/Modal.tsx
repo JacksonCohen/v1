@@ -1,4 +1,4 @@
-import { MouseEvent, ReactChild, useEffect } from 'react';
+import { cloneElement, MouseEvent, ReactChild, ReactElement, useEffect } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { createPortal } from 'react-dom';
 import { styled } from 'src/stitches.config';
@@ -111,9 +111,11 @@ const Modal = ({ title, image, show, handleClose, children, footerButtons }: Mod
           </Header>
           <Body>{children}</Body>
           <Footer>
-            {footerButtons?.map((button) => button)}
+            {footerButtons?.map((button, index) =>
+              cloneElement(button as ReactElement, { key: index })
+            )}
             <Close onClick={handleClose}>
-              <i className='fa fa-times-thin fa-2x' aria-hidden='true'></i>
+              <i className='fa fa-times-thin fa-2x' aria-hidden='true' />
             </Close>
           </Footer>
         </Content>
