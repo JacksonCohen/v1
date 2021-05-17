@@ -9,6 +9,8 @@ export const { styled, keyframes, global } = createCss({
       dark1: '#232c33',
       accent0: '#ffa600',
       accent1: '#007cc6',
+      green: '#04c986',
+      red: '#bf6359',
     },
     fontSizes: {
       f0: '.8rem',

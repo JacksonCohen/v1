@@ -1,4 +1,4 @@
-import { ChangeEvent, MutableRefObject, useReducer } from 'react';
+import { ChangeEvent, FormEvent, MutableRefObject, useReducer, useState } from 'react';
 import { Title as SharedTitle, TitleBar as SharedTitleBar } from '../shared';
 import { styled } from 'src/stitches.config';
 import emailjs from 'emailjs-com';
@@ -46,14 +46,6 @@ const Form = styled('form', {
   justifyContent: 'center',
   flexDirection: 'column',
   width: '33%',
-  // '& .g-recaptcha': {
-  //   transform: 'scale(2)',
-  //   transformOrigin: '0 0',
-  // },
-  // '& .rc-anchor-light': {
-  //   background: '#000 !important',
-  //   color: '#000 !important',
-  // },
 });
 
 const Input = styled('input', {
@@ -90,6 +82,39 @@ const Submit = styled('button', {
   },
 });
 
+const StatusContainer = styled('div', {
+  overflow: 'hidden',
+});
+
+const ContactStatus = styled('div', {
+  display: 'flex',
+  justifyContent: 'center',
+  color: '$dark1',
+  width: '100%',
+  height: '20px',
+  marginBottom: '5px',
+  padding: '5px 0',
+  fontSize: '$f0',
+  borderRadius: '2px',
+  marginTop: '-100%',
+  transition: 'all 3s',
+
+  '&.expanded': {
+    marginTop: '0',
+  },
+
+  variants: {
+    color: {
+      red: {
+        backgroundColor: '$red',
+      },
+      green: {
+        backgroundColor: '$green',
+      },
+    },
+  },
+});
+
 interface ContactProps {
   contactRef: MutableRefObject<any>;
 }
@@ -110,6 +135,7 @@ const stateReducer = (state: State, newState: any) => ({ ...state, ...newState }
 
 const Contact = ({ contactRef }: ContactProps) => {
   const [userInput, setUserInput] = useReducer(stateReducer, initialState);
+  const [sentStatus, setSentStatus] = useState<'SUCCESS' | 'ERROR' | ''>();
 
   const handleChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
     const { name, value } = event.target;
@@ -119,16 +145,23 @@ const Contact = ({ contactRef }: ContactProps) => {
 
   const resetForm = () => {
     setUserInput(initialState);
+    setSentStatus('');
   };
 
-  const sendEmail = () => {
+  const toggleExpand = () => {
+    const el = document.getElementById('expand');
+    setTimeout(() => el.classList.toggle('expanded'), 0);
+  };
+
+  const sendEmail = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     const message = (
-      <>
-        <h1>Message from {userInput.name}</h1>
+      <div>
+        <h2>Message from {userInput.name}</h2>
 
         <div>{userInput.message}</div>
         <div>You can reply at the following email: {userInput.email}</div>
-      </>
+      </div>
     );
     const templateParams = {
       messageHtml: message,
@@ -141,11 +174,16 @@ const Contact = ({ contactRef }: ContactProps) => {
         templateParams,
         process.env.REACT_APP_EMAILJS_USER_ID
       )
-      .then((res: any) => {
+      .then(() => {
+        setSentStatus('SUCCESS');
+        toggleExpand();
         resetForm();
-        console.log(res, 'Success');
       })
-      .catch((err) => console.error(err));
+      .catch((err) => {
+        setSentStatus('ERROR');
+        toggleExpand();
+        console.error(err);
+      });
   };
 
   return (
@@ -157,7 +195,7 @@ const Contact = ({ contactRef }: ContactProps) => {
 
         <Subtitle>Have a question or want to work together? I'd love to hear from you!</Subtitle>
 
-        <Form>
+        <Form onSubmit={sendEmail}>
           <Input
             placeholder='Name'
             name='name'
@@ -180,12 +218,20 @@ const Contact = ({ contactRef }: ContactProps) => {
             onChange={handleChange}
             required
           />
-          {/* <div
-            className='g-recaptcha'
-            data-sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
-          ></div> */}
 
-          <Submit type='submit' onClick={sendEmail}>
+          <StatusContainer>
+            {sentStatus === 'SUCCESS' ? (
+              <ContactStatus color='green' id='expand'>
+                Message sent successfully!
+              </ContactStatus>
+            ) : sentStatus === 'ERROR' ? (
+              <ContactStatus color='red'>Error sending message.</ContactStatus>
+            ) : (
+              ''
+            )}
+          </StatusContainer>
+
+          <Submit type='submit' disabled={!!sentStatus}>
             Submit
           </Submit>
         </Form>
