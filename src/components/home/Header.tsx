@@ -82,7 +82,7 @@ const Header = ({ homeRef }) => {
         let dx = Math.random() - 0.5 * 5;
         let dy = Math.random() - 0.5 * 5;
 
-        const circle = new Circle(c, x, y, dx, dy, radius, mouse);
+        const circle = new Circle(c, { x, y }, { dx, dy }, radius, mouse);
         circles.push(circle);
       }
     };

@@ -8,6 +8,11 @@ const colors = [
 ];
 const trailLength = 8;
 
+interface Velocity {
+  dx: number;
+  dy: number;
+}
+
 interface Coords {
   x: number | undefined;
   y: number | undefined;
@@ -15,10 +20,8 @@ interface Coords {
 
 export default class Circle {
   c: CanvasRenderingContext2D;
-  x: number;
-  y: number;
-  dx: number; // x velocity
-  dy: number; // y velocity
+  position: Coords;
+  velocity: Velocity;
   radius: number;
   minRadius: number;
   positions: Coords[];
@@ -27,18 +30,14 @@ export default class Circle {
 
   constructor(
     context: CanvasRenderingContext2D,
-    x: number,
-    y: number,
-    dx: number,
-    dy: number,
+    position: Coords,
+    velocity: Velocity,
     radius: number,
     mouse: Coords
   ) {
     this.c = context;
-    this.x = x;
-    this.y = y;
-    this.dx = dx;
-    this.dy = dy;
+    this.position = position;
+    this.velocity = velocity;
     this.radius = radius;
     this.mouse = mouse;
     this.minRadius = radius;
@@ -58,32 +57,33 @@ export default class Circle {
     }
 
     this.c.beginPath();
-    this.c.arc(this.x, this.y, 5, 0, Math.PI * 2, false);
+    this.c.arc(this.position.x, this.position.y, 5, 0, Math.PI * 2, false);
     this.c.fillStyle = this.color;
     this.c.fill();
 
-    this.storePosition(this.x, this.y);
+    this.storePosition(this.position.x, this.position.y);
   }
 
   update() {
-    if (this.x + this.radius > window.innerWidth || this.x - this.radius < 0) {
-      this.dx = -this.dx;
+    const { mouse, position, radius, velocity } = this;
+    if (position.x + radius > window.innerWidth || position.x - radius < 0) {
+      velocity.dx = -velocity.dx;
     }
-    if (this.y + this.radius > window.innerHeight || this.y - this.radius < 0) {
-      this.dy = -this.dy;
+    if (position.y + radius > window.innerHeight || position.y - radius < 0) {
+      velocity.dy = -velocity.dy;
     }
 
-    this.x += this.dx;
-    this.y += this.dy;
+    position.x += velocity.dx;
+    position.y += velocity.dy;
 
     if (
-      this.mouse.x - this.x < 100 &&
-      this.mouse.x - this.x > -100 &&
-      this.mouse.y - this.y < 100 &&
-      this.mouse.y - this.y > -100
+      mouse.x - position.x < 100 &&
+      mouse.x - position.x > -100 &&
+      mouse.y - position.y < 100 &&
+      mouse.y - position.y > -100
     ) {
-      this.dx = -this.dx;
-      this.dy = -this.dy;
+      velocity.dx = -velocity.dx;
+      velocity.dy = -velocity.dy;
     }
 
     this.draw();
