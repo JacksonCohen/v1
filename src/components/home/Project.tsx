@@ -33,6 +33,7 @@ const Wrapper = styled('div', {
 
 const Image = styled('img', {
   width: '100%',
+  height: '100%',
   display: 'block',
 });
 
@@ -149,7 +150,7 @@ const Project = ({
 
       <Modal
         title={name}
-        image={images[0]}
+        images={images}
         show={showModal}
         handleClose={() => setShowModal(false)}
         footerButtons={createFooter()}

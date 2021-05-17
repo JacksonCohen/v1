@@ -19,7 +19,7 @@ const Wrapper = styled('div', {
 const ProjectsContainer = styled('div', {
   display: 'flex',
   justifyContent: 'center',
-  alignItems: 'center',
+  alignItems: 'stretch',
   flexWrap: 'wrap',
   width: '66%',
 });

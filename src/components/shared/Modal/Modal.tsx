@@ -2,6 +2,7 @@ import { cloneElement, MouseEvent, ReactChild, ReactElement, useEffect } from 'r
 import { CSSTransition } from 'react-transition-group';
 import { createPortal } from 'react-dom';
 import { styled } from 'src/stitches.config';
+import PhotoCarousel from 'src/components/home/PhotoCarousel';
 
 const Wrapper = styled('div', {
   position: 'fixed',
@@ -79,14 +80,14 @@ const Close = styled('button', {
 
 interface ModalProps {
   title?: string;
-  image: string;
+  images: string[];
   show: boolean;
   handleClose: () => void;
   children?: ReactChild;
   footerButtons?: ReactChild[];
 }
 
-const Modal = ({ title, image, show, handleClose, children, footerButtons }: ModalProps) => {
+const Modal = ({ title, images, show, handleClose, children, footerButtons }: ModalProps) => {
   const closeOnEscapeKeyDown = (event: KeyboardEvent) => {
     if (event.key === 'Escape') {
       handleClose();
@@ -105,7 +106,8 @@ const Modal = ({ title, image, show, handleClose, children, footerButtons }: Mod
     <CSSTransition in={show} unmountOnExit timeout={{ enter: 0, exit: 300 }}>
       <Wrapper onClick={handleClose}>
         <Content onClick={(event: MouseEvent<HTMLDivElement>) => event.stopPropagation()}>
-          <Image src={image}></Image>
+          {/* <Image src={images}></Image> */}
+          <PhotoCarousel images={images} />
           <Header>
             <Title>{title}</Title>
           </Header>
