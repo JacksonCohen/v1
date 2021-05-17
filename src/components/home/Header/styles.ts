@@ -1,7 +1,6 @@
 import { styled } from 'src/stitches.config';
-import { scrollTo } from 'src/utils/scrollTo';
 
-const Section = styled('section', {
+export const Section = styled('section', {
   height: '100vh',
   display: 'flex',
   justifyContent: 'center',
@@ -9,13 +8,13 @@ const Section = styled('section', {
   background: '$dark0',
 });
 
-const Wrapper = styled('div', {
+export const Wrapper = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
 });
 
-const HeroMessage = styled('div', {
+export const HeroMessage = styled('div', {
   textAlign: 'center',
   fontFamily: 'Open Sans',
   color: '$light1',
@@ -23,12 +22,12 @@ const HeroMessage = styled('div', {
   margin: '0 0 15px 0',
 });
 
-const Highlight = styled('span', {
+export const Highlight = styled('span', {
   color: '$accent0',
   fontWeight: 700,
 });
 
-const CallToAction = styled('button', {
+export const CallToAction = styled('button', {
   color: 'white',
   background: 'none',
   border: '1px $light1 solid',
@@ -50,22 +49,3 @@ const CallToAction = styled('button', {
     },
   },
 });
-
-const Header = ({ homeRef }) => {
-  return (
-    <Section id='home' ref={homeRef}>
-      <Wrapper>
-        <HeroMessage>
-          Hi, my name is <Highlight>Jackson Cohen</Highlight>.
-          <br />
-          I'm a software engineer.
-        </HeroMessage>
-        <CallToAction onClick={() => scrollTo('portfolio')}>
-          View my work <i className='fas fa-arrow-right' />
-        </CallToAction>
-      </Wrapper>
-    </Section>
-  );
-};
-
-export default Header;

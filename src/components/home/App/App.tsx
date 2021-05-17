@@ -1,10 +1,5 @@
 import { useRef, useState } from 'react';
-import Contact from './Contact';
-import Footer from './Footer';
-import Header from './Header';
-import Navbar from './Navbar';
-import Projects from './Projects';
-import About from './About';
+import { About, Contact, Footer, Header, Navbar, Projects } from 'src/components';
 import { global } from 'src/stitches.config';
 import { useSticky } from 'src/utils/useSticky';
 
