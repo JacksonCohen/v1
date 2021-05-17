@@ -1,28 +1,7 @@
 import { MutableRefObject, useEffect, useState } from 'react';
-import Project from './Project';
-import { styled } from 'src/stitches.config';
-import { Title, TitleBar } from '../shared';
-
-const Section = styled('section', {
-  padding: '100px 0',
-  position: 'relative',
-  backgroundColor: '$light0',
-});
-
-const Wrapper = styled('div', {
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  flexDirection: 'column',
-});
-
-const ProjectsContainer = styled('div', {
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  flexWrap: 'wrap',
-  width: '66%',
-});
+import { Project } from 'src/components';
+import { Title, TitleBar } from 'src/components/shared';
+import { ProjectsContainer, Section, Wrapper } from './styles';
 
 interface ProjectsProps {
   projectsRef: MutableRefObject<any>;
