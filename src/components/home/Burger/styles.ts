@@ -2,7 +2,7 @@ import { styled } from 'src/stitches.config';
 
 export const StyledBurger = styled('button', {
   position: 'absolute',
-  top: '5%',
+  top: '10px',
   right: '2rem',
   display: 'flex',
   flexDirection: 'column',
@@ -22,7 +22,7 @@ export const StyledBurger = styled('button', {
   '& div': {
     width: '2rem',
     height: '0.25rem',
-    background: '$accent1',
+    background: '$light1',
     borderRadius: '10px',
     transition: 'all 0.3s linear',
     position: 'relative',

@@ -1,28 +1,31 @@
 import { styled } from 'src/stitches.config';
 
-export const StyledMenu = styled('nav', {
+export const Nav = styled('nav', {
+  background: '$dark1',
+  borderBottom: '3px $accent1 solid',
+  height: '50px',
+});
+
+export const StyledMenu = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
-  background: '$accent0',
+  background: '$dark0',
   width: '100vw',
-  // height: '100vh',
   textAlign: 'left',
-  padding: '2rem',
+  padding: '0 10px',
   position: 'absolute',
-  top: '0',
+  top: '52px',
   left: '0',
-  transition: 'transform 0.3s ease-in-out',
-  transform: 'translateY(-100%)',
+  textTransform: 'uppercase',
+  transition: 'height 0.3s ease-in-out',
+  overflow: 'hidden',
 
-  '& a': {
-    fontSize: '2rem',
+  '& div': {
+    color: '$light1',
+    fontSize: '$f2',
     textTransform: 'uppercase',
-    padding: '2rem 0',
-    fontWeight: 'bold',
-    letterSpacing: '0.5rem',
-    color: '$accent1',
-    textDecoration: 'none',
+    padding: '5px 0',
     transition: 'color 0.3s linear',
 
     '&:hover': {
@@ -33,12 +36,10 @@ export const StyledMenu = styled('nav', {
   variants: {
     transform: {
       open: {
-        transform: 'translateY(0)',
         height: '220px',
       },
       closed: {
-        transform: 'translateY(-100%)',
-        height: 0,
+        height: '0',
       },
     },
   },

@@ -98,7 +98,7 @@ export const LearnMore = styled(Button, {
       md: { fontSize: '$f0' },
     },
     padding: {
-      md: { padding: '2px 15px' },
+      md: { padding: '2px 5px' },
     },
   },
 });
