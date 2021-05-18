@@ -1,10 +1,12 @@
 import { CallToAction, Canvas, HeroMessage, Highlight, Section, Wrapper } from './styles';
+import { useWindowDimensions } from 'src/shared/hooks';
 import { scrollTo } from 'src/shared/utils';
 import { Circle } from 'src/components';
-import { useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 
 const Header = ({ homeRef }) => {
-  const updateCanvas = () => {
+  const { width } = useWindowDimensions();
+  const updateCanvas = useCallback(() => {
     const canvas = document.querySelector('canvas');
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
@@ -18,8 +20,8 @@ const Header = ({ homeRef }) => {
     let circles = [];
     const init = () => {
       circles = [];
-
-      for (let i = 0; i < 40; i++) {
+      let numDots = width <= 600 ? 20 : width <= 1024 ? 30 : 40;
+      for (let i = 0; i < numDots; i++) {
         const radius = Math.random() * 10 + 2;
         let x = Math.random() * (window.innerWidth - radius * 2) + radius;
         let y = Math.random() * (window.innerHeight - radius * 2) + radius;
@@ -53,11 +55,11 @@ const Header = ({ homeRef }) => {
     // setInterval(init, 2000);
     init();
     animate();
-  };
+  }, [width]);
 
   useEffect(() => {
     updateCanvas();
-  }, []);
+  }, [updateCanvas]);
 
   return (
     <Section id='home' ref={homeRef}>

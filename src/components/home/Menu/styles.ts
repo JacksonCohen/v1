@@ -10,7 +10,7 @@ export const StyledMenu = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
-  background: '$dark0',
+  background: '$dark1',
   width: '100vw',
   textAlign: 'left',
   padding: '0 10px',

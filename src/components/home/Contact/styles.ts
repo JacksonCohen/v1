@@ -1,5 +1,5 @@
 import { keyframes, styled } from 'src/stitches.config';
-import { Title as SharedTitle, TitleBar as SharedTitleBar } from 'src/shared/styles';
+import { Title as T, TitleBar as TB } from 'src/shared/styles';
 
 const slideRight = keyframes({
   from: { transform: 'translateX(-100%)' },
@@ -35,7 +35,7 @@ export const Wrapper = styled('div', {
   flexDirection: 'column',
 });
 
-export const Title = styled(SharedTitle, {
+export const Title = styled(T, {
   color: '$light0',
 
   variants: {
@@ -46,7 +46,7 @@ export const Title = styled(SharedTitle, {
   },
 });
 
-export const TitleBar = styled(SharedTitleBar, {
+export const TitleBar = styled(TB, {
   marginBottom: '25px',
   background: '$light0',
 
