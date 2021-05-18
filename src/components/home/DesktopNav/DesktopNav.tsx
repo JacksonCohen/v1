@@ -1,6 +1,7 @@
-import { scrollTo } from 'src/utils/scrollTo';
+import { NavLink } from 'src/components/shared';
 import { NavProps } from '../Navbar';
-import { Nav, NavLink } from './styles';
+import { scrollTo } from 'src/utils';
+import { Nav } from './styles';
 
 const DesktopNav = ({ section }: NavProps) => {
   return (

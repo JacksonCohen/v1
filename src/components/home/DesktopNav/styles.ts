@@ -10,19 +10,3 @@ export const Nav = styled('nav', {
   width: '100%',
   textTransform: 'uppercase',
 });
-
-export const NavLink = styled('div', {
-  display: 'inline',
-  fontSize: 'initial',
-  margin: '0 20px',
-  padding: 'initial',
-  cursor: 'pointer',
-  color: '$light1',
-  transition: 'color .33s',
-  '&:hover': {
-    color: '$accent0',
-  },
-  '&.selected': {
-    color: '$accent0',
-  },
-});
