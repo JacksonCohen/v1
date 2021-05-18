@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Modal } from 'src/components/shared';
+import { Modal } from 'src/shared';
 import {
   FooterLink,
   Image,

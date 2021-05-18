@@ -1,5 +1,5 @@
 import { MutableRefObject } from 'react';
-import { Title, TitleBar } from 'src/components/shared';
+import { Title, TitleBar } from 'src/shared';
 import { Section, Wrapper } from './styles';
 
 interface AboutProps {

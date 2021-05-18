@@ -1,5 +1,5 @@
-import { NavLink } from 'src/components/shared';
-import { scrollTo } from 'src/utils';
+import { scrollTo } from 'src/shared/utils';
+import { NavLink } from 'src/shared/styles';
 import { StyledMenu } from './styles';
 
 interface MenuProps {

@@ -1,5 +1,5 @@
-import { scrollTo } from 'src/utils/scrollTo';
 import { CallToAction, HeroMessage, Highlight, Section, Wrapper } from './styles';
+import { scrollTo } from 'src/shared/utils';
 
 const Header = ({ homeRef }) => {
   return (

@@ -1,4 +1,4 @@
-import { Button } from 'src/components/shared';
+import { Button } from 'src/shared';
 import { keyframes, styled } from 'src/stitches.config';
 
 const slideDown = keyframes({

@@ -1,6 +1,6 @@
 import { MutableRefObject, useEffect, useState } from 'react';
 import { Project } from 'src/components';
-import { Title, TitleBar } from 'src/components/shared';
+import { Title, TitleBar } from 'src/shared';
 import { ProjectsContainer, Section, Wrapper } from './styles';
 
 interface ProjectsProps {

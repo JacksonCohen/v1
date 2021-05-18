@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import { About, Contact, Footer, Header, Navbar, Projects } from 'src/components';
 import { global } from 'src/stitches.config';
-import { useSticky } from 'src/utils/hooks';
+import { useSticky } from 'src/shared/hooks';
 
 const globalStyles = global({
   '*': { margin: 0, padding: 0, fontFamily: 'Open Sans' },

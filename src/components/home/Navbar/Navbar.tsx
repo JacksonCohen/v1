@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { useToggle, useWindowDimensions } from 'src/utils/hooks';
+import { useToggle, useWindowDimensions } from 'src/shared/hooks';
 import { Burger, DesktopNav, Menu } from 'src/components';
 import { Sticky } from './styles';
 

@@ -1,5 +1,5 @@
 import { Dispatch, MutableRefObject, SetStateAction, useCallback, useEffect } from 'react';
-import { getElementDimensions } from '../getElementDimensions';
+import { getElementDimensions } from 'src/shared/utils';
 
 interface SectionRef {
   section: string;

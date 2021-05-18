@@ -1,5 +1,5 @@
-import { scrollTo } from 'src/utils/scrollTo';
 import { BackToTop, FooterInfo, Highlight, Icon, IconBar, IconLink, Wrapper } from './styles';
+import { scrollTo } from 'src/shared/utils';
 
 const Footer = () => {
   return (

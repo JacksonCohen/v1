@@ -1,5 +1,5 @@
 import { styled } from 'src/stitches.config';
-import { Title as SharedTitle, TitleBar as SharedTitleBar } from '../../shared';
+import { Title as SharedTitle, TitleBar as SharedTitleBar } from 'src/shared/styles';
 
 export const Section = styled('section', {
   padding: '100px 0',
