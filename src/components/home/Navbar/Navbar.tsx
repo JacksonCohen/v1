@@ -1,5 +1,8 @@
-import { ReactChild, useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { DesktopNav } from 'src/components';
+import { useToggle } from 'src/utils/useToggle';
+import { Burger } from '../Burger';
+import { Menu } from '../Menu';
 import { Sticky } from './styles';
 
 export interface NavProps {
@@ -7,7 +10,9 @@ export interface NavProps {
 }
 
 const Navbar = ({ section }: NavProps) => {
-  const [nav, setNav] = useState<ReactChild>(<DesktopNav section={section} />);
+  const [nav, setNav] = useState(<DesktopNav section={section} />);
+  const [open, toggleOpen] = useToggle();
+
   const mql = window.matchMedia('(max-width: 600px)');
 
   const setResponsiveNav = useCallback(
@@ -15,12 +20,17 @@ const Navbar = ({ section }: NavProps) => {
       const mobileView = event.matches;
 
       if (mobileView) {
-        setNav(<></>);
+        setNav(
+          <>
+            <Burger open={open} toggleOpen={toggleOpen} />
+            <Menu open={open} toggleOpen={toggleOpen} />
+          </>
+        );
       } else {
         setNav(<DesktopNav section={section} />);
       }
     },
-    [section]
+    [open, section, toggleOpen]
   );
 
   useEffect(() => {
@@ -29,7 +39,7 @@ const Navbar = ({ section }: NavProps) => {
     return () => {
       mql.removeEventListener('change', setResponsiveNav);
     };
-  }, [mql, section, setResponsiveNav]);
+  }, [mql, open, section, setResponsiveNav]);
 
   return <Sticky>{nav}</Sticky>;
 };
