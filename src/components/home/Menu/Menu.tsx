@@ -1,33 +1,31 @@
-import { MouseEventHandler } from 'react';
+import { NavLink } from 'src/components/shared';
+import { scrollTo } from 'src/utils';
 import { StyledMenu } from './styles';
 
 interface MenuProps {
   open: boolean;
-  toggleOpen: MouseEventHandler<HTMLButtonElement>;
+  section: string;
 }
 
-const Menu = ({ open, toggleOpen }: MenuProps) => {
-  console.log('open: ', open);
+const Menu = ({ open, section }: MenuProps) => {
   return (
     <StyledMenu transform={open ? 'open' : 'closed'}>
-      <a href='/'>
-        <span role='img' aria-label='about us'>
-          &#x1f481;&#x1f3fb;&#x200d;&#x2642;&#xfe0f;
-        </span>
-        About us
-      </a>
-      <a href='/'>
-        <span role='img' aria-label='price'>
-          &#x1f4b8;
-        </span>
-        Pricing
-      </a>
-      <a href='/'>
-        <span role='img' aria-label='contact'>
-          &#x1f4e9;
-        </span>
+      <NavLink onClick={() => scrollTo('home')}>Home</NavLink>
+      <NavLink onClick={() => scrollTo('about')} className={section === 'About' ? 'selected' : ''}>
+        About
+      </NavLink>
+      <NavLink
+        onClick={() => scrollTo('portfolio')}
+        className={section === 'Projects' ? 'selected' : ''}
+      >
+        Portfolio
+      </NavLink>
+      <NavLink
+        onClick={() => scrollTo('contact')}
+        className={section === 'Contact' ? 'selected' : ''}
+      >
         Contact
-      </a>
+      </NavLink>
     </StyledMenu>
   );
 };

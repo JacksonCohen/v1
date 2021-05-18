@@ -9,9 +9,9 @@ interface BurgerProps {
 const Burger = ({ open, toggleOpen }: BurgerProps) => {
   return (
     <StyledBurger onClick={toggleOpen}>
-      <div />
-      <div />
-      <div />
+      <div className={open ? 'active' : ''} />
+      <div className={open ? 'active' : ''} />
+      <div className={open ? 'active' : ''} />
     </StyledBurger>
   );
 };

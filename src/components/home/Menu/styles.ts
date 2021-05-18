@@ -5,18 +5,15 @@ export const StyledMenu = styled('nav', {
   flexDirection: 'column',
   justifyContent: 'center',
   background: '$accent0',
-  height: '100vh',
+  width: '100vw',
+  // height: '100vh',
   textAlign: 'left',
   padding: '2rem',
   position: 'absolute',
   top: '0',
   left: '0',
   transition: 'transform 0.3s ease-in-out',
-  transform: 'translateX(-100%)',
-
-  // @media (max-width: 600px) {
-  //   width: '100%',
-  // }
+  transform: 'translateY(-100%)',
 
   '& a': {
     fontSize: '2rem',
@@ -28,11 +25,6 @@ export const StyledMenu = styled('nav', {
     textDecoration: 'none',
     transition: 'color 0.3s linear',
 
-    // @media (max-width: '600px') {
-    //   fontSize: '1.5rem',
-    //   textAlign: 'center',
-    // }
-
     '&:hover': {
       color: '$accent0',
     },
@@ -41,10 +33,12 @@ export const StyledMenu = styled('nav', {
   variants: {
     transform: {
       open: {
-        transform: 'translateX(0)',
+        transform: 'translateY(0)',
+        height: '220px',
       },
       closed: {
-        transform: 'translateX(-100%)',
+        transform: 'translateY(-100%)',
+        height: 0,
       },
     },
   },
