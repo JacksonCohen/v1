@@ -1,6 +1,7 @@
 export * from 'src/components/home/About';
 export * from 'src/components/home/App';
 export * from 'src/components/home/Burger';
+export * from 'src/components/home/Circle';
 export * from 'src/components/home/Contact';
 export * from 'src/components/home/DesktopNav';
 export * from 'src/components/home/Footer';

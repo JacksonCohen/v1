@@ -6,17 +6,18 @@ export const Section = styled('section', {
   justifyContent: 'center',
   alignItems: 'center',
   background: '$dark0',
+  // background: '#373850',
 });
 
 export const Wrapper = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
+  zIndex: 100,
 });
 
 export const HeroMessage = styled('div', {
   textAlign: 'center',
-  fontFamily: 'Open Sans',
   color: '$light1',
   fontSize: '$f4',
   margin: '0 0 15px 0',
@@ -56,4 +57,9 @@ export const CallToAction = styled('button', {
       transform: 'rotate(90deg)',
     },
   },
+});
+
+export const Canvas = styled('canvas', {
+  border: '1px solid black',
+  position: 'absolute',
 });
