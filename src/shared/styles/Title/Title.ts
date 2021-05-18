@@ -2,12 +2,12 @@ import { styled, keyframes } from 'src/stitches.config';
 
 const slideRight = keyframes({
   from: { transform: 'translateX(-100%)' },
-  to: { transform: 'translateX(0)' },
+  to: { opacity: '1', transform: 'translateX(0)' },
 });
 
 const slideLeft = keyframes({
   from: { transform: 'translateX(100%)' },
-  to: { transform: 'translateX(0)' },
+  to: { opacity: '1', transform: 'translateX(0)' },
 });
 
 const Title = styled('h2', {
@@ -15,8 +15,13 @@ const Title = styled('h2', {
   textTransform: 'uppercase',
   paddingBottom: '10px',
   color: '$dark1',
+  opacity: '0',
+
+  '&.slide-left': {
+    animation: `${slideLeft} .75s forwards`,
+  },
   '&.slide-right': {
-    animation: `${slideRight} .5s`,
+    animation: `${slideRight} .75s forwards`,
   },
 
   variants: {
@@ -31,10 +36,15 @@ export const TitleBar = styled('div', {
   width: '70px',
   height: '4px',
   background: '$dark1',
-  '&.slide-left': {
-    animation: `${slideLeft} 1s`,
-  },
   marginBottom: '100px',
+  opacity: '0',
+
+  '&.slide-left': {
+    animation: `${slideLeft} 1.5s .25s forwards`,
+  },
+  '&.slide-right': {
+    animation: `${slideRight} 1.5s .25s forwards`,
+  },
 
   variants: {
     height: {
