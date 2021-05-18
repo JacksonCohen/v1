@@ -5,11 +5,12 @@ const Button = styled('button', {
   background: 'none',
   border: '1px white solid',
   borderRadius: '1px',
+  padding: '10px 10px',
+  cursor: 'pointer',
+
   '&:hover': {
     backgroundColor: '#d8d8f6',
   },
-  padding: '10px 10px',
-  cursor: 'pointer',
 });
 
 export default Button;

@@ -12,6 +12,7 @@ import {
   Triangle,
   Wrapper,
 } from './styles';
+import { useInView } from 'react-intersection-observer';
 
 interface ContactProps {
   contactRef: MutableRefObject<any>;
@@ -33,6 +34,7 @@ const stateReducer = (state: State, newState: any) => ({ ...state, ...newState }
 
 const Contact = ({ contactRef }: ContactProps) => {
   const [userInput, setUserInput] = useReducer(stateReducer, initialState);
+  const [inViewRef, inView] = useInView({ triggerOnce: true });
 
   const handleChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
     const { name, value } = event.target;
@@ -75,14 +77,20 @@ const Contact = ({ contactRef }: ContactProps) => {
     <Section id='contact' ref={contactRef}>
       <Triangle />
       <Wrapper>
-        <Title fontSize={{ '@bp0': 'sm', '@bp1': 'md' }}>Contact</Title>
-        <TitleBar height={{ '@bp0': 'sm', '@bp1': 'md' }} />
+        <Title fontSize={{ '@bp0': 'sm', '@bp1': 'md' }} className={inView ? 'slide-left' : ''}>
+          Contact
+        </Title>
+        <TitleBar height={{ '@bp0': 'sm', '@bp1': 'md' }} className={inView ? 'slide-right' : ''} />
 
-        <Subtitle width={{ '@bp0': 'sm', '@bp1': 'md' }}>
+        <Subtitle width={{ '@bp0': 'sm', '@bp1': 'md' }} className={inView ? 'slide-right' : ''}>
           Have a question or want to work together? I'd love to hear from you!
         </Subtitle>
 
-        <Form width={{ '@bp0': 'sm', '@bp1': 'md' }}>
+        <Form
+          ref={inViewRef}
+          width={{ '@bp0': 'sm', '@bp1': 'md' }}
+          className={inView ? 'pop-in' : ''}
+        >
           <Input
             placeholder='Name'
             name='name'

@@ -1,5 +1,16 @@
-import { styled } from 'src/stitches.config';
+import { keyframes, styled } from 'src/stitches.config';
 import { Title as SharedTitle, TitleBar as SharedTitleBar } from 'src/shared/styles';
+
+const slideRight = keyframes({
+  from: { transform: 'translateX(-100%)' },
+  to: { opacity: '1', transform: 'translateX(0)' },
+});
+
+const popIn = keyframes({
+  '0%': { transform: 'scale(0.75)' },
+  '50%': { opacity: '0.5', transform: 'scale(1.15)' },
+  '100%': { opacity: '1', transform: 'scale(1)' },
+});
 
 export const Section = styled('section', {
   padding: '100px 0',
@@ -51,6 +62,11 @@ export const Subtitle = styled('div', {
   fontSize: '$f1',
   color: '$accent1',
   marginBottom: '25px',
+  opacity: '0',
+
+  '&.slide-right': {
+    animation: `${slideRight} 1s .25s forwards`,
+  },
 
   variants: {
     width: {
@@ -65,6 +81,12 @@ export const Form = styled('form', {
   justifyContent: 'center',
   flexDirection: 'column',
   width: '33%',
+  animationDelay: '2.5s',
+  opacity: '0',
+
+  '&.pop-in': {
+    animation: `${popIn} 1s 1s forwards`,
+  },
 
   variants: {
     width: {

@@ -1,6 +1,7 @@
 import { MutableRefObject, useEffect, useState } from 'react';
+import { useInView } from 'react-intersection-observer';
 import { Project } from 'src/components';
-import { Title, TitleBar } from 'src/shared';
+import { Title, TitleBar } from 'src/shared/styles';
 import { ProjectsContainer, Section, Wrapper } from './styles';
 
 interface ProjectsProps {
@@ -9,6 +10,7 @@ interface ProjectsProps {
 
 const Projects = ({ projectsRef }: ProjectsProps) => {
   const [projects, setProjects] = useState([]);
+  const [inViewRef, inView] = useInView({ triggerOnce: true });
 
   useEffect(() => {
     fetch('projects.json', {
@@ -28,10 +30,12 @@ const Projects = ({ projectsRef }: ProjectsProps) => {
   return (
     <Section id='portfolio' ref={projectsRef}>
       <Wrapper>
-        <Title fontSize={{ '@bp0': 'sm', '@bp1': 'md' }}>Projects</Title>
-        <TitleBar height={{ '@bp0': 'sm', '@bp1': 'md' }} />
+        <Title fontSize={{ '@bp0': 'sm', '@bp1': 'md' }} className={inView ? 'slide-left' : ''}>
+          Projects
+        </Title>
+        <TitleBar height={{ '@bp0': 'sm', '@bp1': 'md' }} className={inView ? 'slide-right' : ''} />
 
-        <ProjectsContainer width={{ '@bp0': 'sm', '@bp1': 'md' }}>
+        <ProjectsContainer ref={inViewRef} width={{ '@bp0': 'sm', '@bp1': 'md' }}>
           {projects.map((project, index) => (
             <Project data={project} key={index} />
           ))}

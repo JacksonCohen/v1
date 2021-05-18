@@ -1,19 +1,20 @@
-import { Button } from 'src/shared';
+import { Button } from 'src/shared/styles';
 import { keyframes, styled } from 'src/stitches.config';
 
 const slideDown = keyframes({
-  from: { transform: 'translateY(-25%)' },
-  to: { transform: 'translateY(0)' },
+  from: { opacity: '0', transform: 'translateY(-25%)' },
+  to: { opacity: '1', transform: 'translateY(0)' },
 });
 
 const slideUp = keyframes({
-  from: { transform: 'translateY(25%)' },
-  to: { transform: 'translateY(0)' },
+  from: { opacity: '0', transform: 'translateY(25%)' },
+  to: { opacity: '1', transform: 'translateY(0)' },
 });
 
 export const Wrapper = styled('div', {
   position: 'relative',
   width: '33%',
+
   '&:hover': {
     '& > div:nth-child(2)': {
       transition: '.2s linear',
