@@ -28,10 +28,10 @@ const Projects = ({ projectsRef }: ProjectsProps) => {
   return (
     <Section id='portfolio' ref={projectsRef}>
       <Wrapper>
-        <Title>Projects</Title>
-        <TitleBar />
+        <Title fontSize={{ '@bp0': 'sm', '@bp1': 'md' }}>Projects</Title>
+        <TitleBar height={{ '@bp0': 'sm', '@bp1': 'md' }} />
 
-        <ProjectsContainer>
+        <ProjectsContainer width={{ '@bp0': 'sm', '@bp1': 'md' }}>
           {projects.map((project, index) => (
             <Project data={project} key={index} />
           ))}

@@ -28,6 +28,13 @@ export const Wrapper = styled('div', {
       },
     },
   },
+
+  variants: {
+    width: {
+      sm: { width: '100%' },
+      md: { width: '50%' },
+    },
+  },
 });
 
 export const Image = styled('img', {
@@ -54,11 +61,26 @@ export const Name = styled('div', {
   fontSize: '$f2',
   fontWeight: '700',
   color: '$dark1',
+
+  variants: {
+    fontSize: {
+      sm: { fontSize: '$f3' },
+      md: { fontSize: '$f1' },
+    },
+  },
 });
 
 export const Technologies = styled('div', {
   color: '$accent1',
   fontSize: '$f0',
+  padding: '0 5px',
+
+  variants: {
+    fontSize: {
+      sm: { fontSize: '$f1' },
+      md: { fontSize: '$f0' },
+    },
+  },
 });
 
 export const LearnMore = styled(Button, {
@@ -68,6 +90,16 @@ export const LearnMore = styled(Button, {
   '&:hover': {
     color: '$light1',
     backgroundColor: '$accent1',
+  },
+
+  variants: {
+    fontSize: {
+      sm: { fontSize: '$f1' },
+      md: { fontSize: '$f0' },
+    },
+    padding: {
+      md: { padding: '2px 15px' },
+    },
   },
 });
 

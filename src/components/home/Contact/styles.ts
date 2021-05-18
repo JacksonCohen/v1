@@ -26,17 +26,38 @@ export const Wrapper = styled('div', {
 
 export const Title = styled(SharedTitle, {
   color: '$light0',
+
+  variants: {
+    fontSize: {
+      sm: { fontSize: '$f4' },
+      md: { fontSize: '$f4' },
+    },
+  },
 });
 
 export const TitleBar = styled(SharedTitleBar, {
   marginBottom: '25px',
   background: '$light0',
+
+  variants: {
+    height: {
+      sm: { height: '3px' },
+      md: { height: '3px' },
+    },
+  },
 });
 
 export const Subtitle = styled('div', {
   fontSize: '$f1',
   color: '$accent1',
   marginBottom: '25px',
+
+  variants: {
+    width: {
+      sm: { width: '90%' },
+      md: { width: '90%' },
+    },
+  },
 });
 
 export const Form = styled('form', {
@@ -44,14 +65,13 @@ export const Form = styled('form', {
   justifyContent: 'center',
   flexDirection: 'column',
   width: '33%',
-  // '& .g-recaptcha': {
-  //   transform: 'scale(2)',
-  //   transformOrigin: '0 0',
-  // },
-  // '& .rc-anchor-light': {
-  //   background: '#000 !important',
-  //   color: '#000 !important',
-  // },
+
+  variants: {
+    width: {
+      sm: { width: '90%' },
+      md: { width: '90%' },
+    },
+  },
 });
 
 export const Input = styled('input', {
