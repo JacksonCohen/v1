@@ -1,5 +1,5 @@
 import { MutableRefObject } from 'react';
-import { Title, TitleBar } from 'src/components/shared';
+import { Title, TitleBar } from 'src/shared';
 import { Section, Wrapper } from './styles';
 
 interface AboutProps {
@@ -10,8 +10,8 @@ const About = ({ aboutRef }: AboutProps) => {
   return (
     <Section id='about' ref={aboutRef}>
       <Wrapper>
-        <Title>About</Title>
-        <TitleBar />
+        <Title fontSize={{ '@bp0': 'sm', '@bp1': 'md' }}>About</Title>
+        <TitleBar height={{ '@bp0': 'sm', '@bp1': 'md' }} />
       </Wrapper>
     </Section>
   );

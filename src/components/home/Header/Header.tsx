@@ -1,11 +1,11 @@
-import { scrollTo } from 'src/utils/scrollTo';
 import { CallToAction, HeroMessage, Highlight, Section, Wrapper } from './styles';
+import { scrollTo } from 'src/shared/utils';
 
 const Header = ({ homeRef }) => {
   return (
     <Section id='home' ref={homeRef}>
       <Wrapper>
-        <HeroMessage>
+        <HeroMessage fontSize={{ '@bp0': 'sm', '@bp1': 'md' }}>
           Hi, my name is <Highlight>Jackson Cohen</Highlight>.
           <br />
           I'm a software engineer.

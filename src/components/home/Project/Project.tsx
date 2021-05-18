@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Modal } from 'src/components/shared';
+import { Modal } from 'src/shared';
 import {
   FooterLink,
   Image,
@@ -54,16 +54,24 @@ const Project = ({
   };
 
   return (
-    <Wrapper>
+    <Wrapper width={{ '@bp0': 'sm', '@bp1': 'md' }}>
       <Image src={images[0]} />
 
       <ProjectInfo>
         <InfoGroup>
-          <Name>{name}</Name>
-          <Technologies>{technologies.join(' / ')}</Technologies>
+          <Name fontSize={{ '@bp0': 'sm', '@bp1': 'md' }}>{name}</Name>
+          <Technologies fontSize={{ '@bp0': 'sm', '@bp1': 'md' }}>
+            {technologies.join(' / ')}
+          </Technologies>
         </InfoGroup>
 
-        <LearnMore onClick={() => setShowModal(true)}>Learn More</LearnMore>
+        <LearnMore
+          onClick={() => setShowModal(true)}
+          fontSize={{ '@bp0': 'sm', '@bp1': 'md' }}
+          padding={{ '@bp1': 'md' }}
+        >
+          Learn More
+        </LearnMore>
       </ProjectInfo>
 
       <Modal

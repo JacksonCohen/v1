@@ -19,7 +19,7 @@ export const Wrapper = styled('footer', {
   flexDirection: 'column',
   position: 'relative',
   height: '25vh',
-  paddingTop: '10px',
+  padding: '30px 0 10px 0;',
 });
 
 export const BackToTop = styled('img', {

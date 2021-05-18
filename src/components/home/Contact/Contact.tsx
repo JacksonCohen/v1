@@ -75,12 +75,14 @@ const Contact = ({ contactRef }: ContactProps) => {
     <Section id='contact' ref={contactRef}>
       <Triangle />
       <Wrapper>
-        <Title>Contact</Title>
-        <TitleBar />
+        <Title fontSize={{ '@bp0': 'sm', '@bp1': 'md' }}>Contact</Title>
+        <TitleBar height={{ '@bp0': 'sm', '@bp1': 'md' }} />
 
-        <Subtitle>Have a question or want to work together? I'd love to hear from you!</Subtitle>
+        <Subtitle width={{ '@bp0': 'sm', '@bp1': 'md' }}>
+          Have a question or want to work together? I'd love to hear from you!
+        </Subtitle>
 
-        <Form>
+        <Form width={{ '@bp0': 'sm', '@bp1': 'md' }}>
           <Input
             placeholder='Name'
             name='name'

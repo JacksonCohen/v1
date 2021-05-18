@@ -1,36 +1,30 @@
-import { scrollTo } from 'src/utils/scrollTo';
-import { Nav, NavLink, Sticky } from './styles';
+import { useCallback } from 'react';
+import { useToggle, useWindowDimensions } from 'src/shared/hooks';
+import { Burger, DesktopNav, Menu } from 'src/components';
+import { Sticky } from './styles';
 
-interface NavProps {
+export interface NavProps {
   section: string;
 }
 
 const Navbar = ({ section }: NavProps) => {
-  return (
-    <Sticky>
-      <Nav>
-        <NavLink onClick={() => scrollTo('home')}>Home</NavLink>
-        <NavLink
-          onClick={() => scrollTo('about')}
-          className={section === 'About' ? 'selected' : ''}
-        >
-          About
-        </NavLink>
-        <NavLink
-          onClick={() => scrollTo('portfolio')}
-          className={section === 'Projects' ? 'selected' : ''}
-        >
-          Portfolio
-        </NavLink>
-        <NavLink
-          onClick={() => scrollTo('contact')}
-          className={section === 'Contact' ? 'selected' : ''}
-        >
-          Contact
-        </NavLink>
-      </Nav>
-    </Sticky>
-  );
+  const [open, toggleOpen] = useToggle();
+  const { width } = useWindowDimensions();
+
+  const setResponsiveNav = useCallback(() => {
+    if (width > 600) {
+      return <DesktopNav section={section} />;
+    } else {
+      return (
+        <>
+          <Burger open={open} toggleOpen={toggleOpen} />
+          <Menu open={open} section={section} />
+        </>
+      );
+    }
+  }, [open, section, toggleOpen, width]);
+
+  return <Sticky>{setResponsiveNav()}</Sticky>;
 };
 
 export default Navbar;

@@ -20,6 +20,14 @@ export const HeroMessage = styled('div', {
   color: '$light1',
   fontSize: '$f4',
   margin: '0 0 15px 0',
+  padding: '0 10px',
+
+  variants: {
+    fontSize: {
+      sm: { fontSize: '$f2' },
+      md: { fontSize: '$f3' },
+    },
+  },
 });
 
 export const Highlight = styled('span', {

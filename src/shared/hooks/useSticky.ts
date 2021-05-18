@@ -1,5 +1,5 @@
 import { Dispatch, MutableRefObject, SetStateAction, useCallback, useEffect } from 'react';
-import { getDimensions } from './getDimensions';
+import { getElementDimensions } from 'src/shared/utils';
 
 interface SectionRef {
   section: string;
@@ -30,12 +30,12 @@ export function useSticky(refs: SectionRef[], { visibleSection, setVisibleSectio
 
   useEffect(() => {
     const handleScroll = () => {
-      const { height: headerHeight } = getDimensions(refs[0].ref.current);
+      const { height: headerHeight } = getElementDimensions(refs[0].ref.current);
       const scrollPosition = window.scrollY + headerHeight;
 
       const selected = refs.find(({ section, ref }) => {
         const element = ref.current;
-        const { offsetBottom, offsetTop } = getDimensions(element);
+        const { offsetBottom, offsetTop } = getElementDimensions(element);
         // TODO: Return true if at the end of current section
         return scrollPosition > offsetTop && scrollPosition < offsetBottom;
       });

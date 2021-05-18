@@ -19,4 +19,11 @@ export const ProjectsContainer = styled('div', {
   alignItems: 'center',
   flexWrap: 'wrap',
   width: '66%',
+
+  variants: {
+    width: {
+      sm: { width: '100%' },
+      md: { width: '66%' },
+    },
+  },
 });
