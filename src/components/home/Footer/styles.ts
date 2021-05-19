@@ -6,9 +6,9 @@ const spin = keyframes({
 });
 
 const pulse = keyframes({
-  '0%': { transform: 'scale(0.95)' },
-  '50%': { transform: 'scale(1)' },
-  '100%': { transform: 'scale(0.95)' },
+  '0%': { transform: 'scale(1)' },
+  '50%': { transform: 'scale(1.1)' },
+  '100%': { transform: 'scale(1)' },
 });
 
 export const Wrapper = styled('footer', {
@@ -30,7 +30,7 @@ export const BackToTop = styled('img', {
   backgroundColor: '$accent0',
   cursor: 'pointer',
   '&:hover': {
-    animation: `${pulse} 2s`,
+    animation: `${pulse} 1s`,
   },
 });
 
