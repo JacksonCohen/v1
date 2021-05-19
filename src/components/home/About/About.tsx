@@ -1,7 +1,8 @@
 import { MutableRefObject } from 'react';
 import { Title, TitleBar } from 'src/shared/styles';
-import { Content, List, ListItem, Paragraph, Picture, Section, Text, Wrapper } from './styles';
+import { Content, List, ListItem, Paragraph, Portrait, Section, Text, Wrapper } from './styles';
 import { useInView } from 'react-intersection-observer';
+import portrait from 'src/assets/images/portrait.png';
 
 interface AboutProps {
   aboutRef: MutableRefObject<any>;
@@ -71,7 +72,7 @@ const About = ({ aboutRef }: AboutProps) => {
             </List>
           </Text>
 
-          <Picture src='https://via.placeholder.com/300x300' />
+          <Portrait src={portrait} width='300px' height='100%' />
         </Content>
       </Wrapper>
     </Section>

@@ -45,7 +45,9 @@ export const Paragraph = styled('p', {
   marginBottom: '1rem',
 });
 
-export const Picture = styled('img', {});
+export const Portrait = styled('img', {
+  borderRadius: '5px',
+});
 
 export const List = styled('ul', {
   columnCount: 2,
