@@ -1,7 +1,7 @@
 import { scrollTo } from 'src/shared/utils';
 import { NavLink } from 'src/shared/styles';
 import { NavProps } from '../Navbar';
-import { Nav } from './styles';
+import { Nav, Resume } from './styles';
 
 const DesktopNav = ({ section }: NavProps) => {
   return (
@@ -22,6 +22,14 @@ const DesktopNav = ({ section }: NavProps) => {
       >
         Contact
       </NavLink>
+      <Resume
+        as='a'
+        target='_blank'
+        rel='noreferrer'
+        href='https://drive.google.com/file/d/1NdrstYmJfG8J0OLAMYXM4osbvUri9mx_/view?usp=sharing'
+      >
+        Resume
+      </Resume>
     </Nav>
   );
 };

@@ -1,6 +1,6 @@
 import { scrollTo } from 'src/shared/utils';
 import { NavLink } from 'src/shared/styles';
-import { Nav, StyledMenu } from './styles';
+import { Nav, StyledMenu, Resume } from './styles';
 
 interface MenuProps {
   open: boolean;
@@ -30,6 +30,14 @@ const Menu = ({ open, section }: MenuProps) => {
         >
           Contact
         </NavLink>
+        <Resume
+          as='a'
+          href='https://drive.google.com/file/d/1NdrstYmJfG8J0OLAMYXM4osbvUri9mx_/view?usp=sharing'
+          target='_blank'
+          rel='noreferrer'
+        >
+          Resume
+        </Resume>
       </StyledMenu>
     </Nav>
   );

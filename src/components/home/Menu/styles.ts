@@ -1,3 +1,4 @@
+import { NavLink } from 'src/shared';
 import { styled } from 'src/stitches.config';
 
 export const Nav = styled('nav', {
@@ -43,4 +44,10 @@ export const StyledMenu = styled('div', {
       },
     },
   },
+});
+
+export const Resume = styled(NavLink, {
+  textDecoration: 'none',
+  fontSize: '$f2',
+  padding: '5px 0',
 });

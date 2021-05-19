@@ -1,3 +1,4 @@
+import { NavLink } from 'src/shared';
 import { styled } from 'src/stitches.config';
 
 export const Nav = styled('nav', {
@@ -9,4 +10,9 @@ export const Nav = styled('nav', {
   height: '50px',
   width: '100%',
   textTransform: 'uppercase',
+});
+
+export const Resume = styled(NavLink, {
+  marginLeft: 'auto',
+  textDecoration: 'none',
 });
