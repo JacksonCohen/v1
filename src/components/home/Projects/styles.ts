@@ -6,9 +6,20 @@ const slideUp = keyframes({
 });
 
 export const Section = styled('section', {
-  padding: '100px 0',
+  padding: '100px 200px',
   position: 'relative',
   backgroundColor: '$light0',
+
+  variants: {
+    padding: {
+      sm: {
+        padding: '100px 40px',
+      },
+      md: {
+        padding: '100px 100px',
+      },
+    },
+  },
 });
 
 export const Wrapper = styled('div', {

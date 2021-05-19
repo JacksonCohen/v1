@@ -24,6 +24,11 @@ const Footer = () => {
             <i className='fab fa-angellist' />
           </Icon>
         </IconLink>
+        <IconLink href='https://www.instagram.com/jaxroth/'>
+          <Icon>
+            <i className='fab fa-instagram' />
+          </Icon>
+        </IconLink>
       </IconBar>
       <FooterInfo>
         Jackson Cohen <Highlight>©{new Date().getFullYear()}</Highlight>

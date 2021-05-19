@@ -28,7 +28,7 @@ const Projects = ({ projectsRef }: ProjectsProps) => {
   }, []);
 
   return (
-    <Section id='portfolio' ref={projectsRef}>
+    <Section id='portfolio' ref={projectsRef} padding={{ '@bp0': 'sm', '@bp1': 'md' }}>
       <Wrapper>
         <Title fontSize={{ '@bp0': 'sm', '@bp1': 'md' }} className={inView ? 'slide-left' : ''}>
           Projects
