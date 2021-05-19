@@ -16,6 +16,7 @@ export const Section = styled('section', {
   padding: '100px 0',
   position: 'relative',
   background: '#444550',
+  overflowX: 'hidden',
 });
 
 export const Triangle = styled('div', {

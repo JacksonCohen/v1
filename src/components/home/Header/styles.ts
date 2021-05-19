@@ -6,7 +6,6 @@ export const Section = styled('section', {
   justifyContent: 'center',
   alignItems: 'center',
   background: '$dark0',
-  // background: '#373850',
 });
 
 export const Wrapper = styled('div', {

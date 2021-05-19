@@ -8,7 +8,7 @@ const Header = ({ homeRef }) => {
   const { width } = useWindowDimensions();
   const updateCanvas = useCallback(() => {
     const canvas = document.querySelector('canvas');
-    canvas.width = window.innerWidth;
+    canvas.width = document.body.clientWidth;
     canvas.height = window.innerHeight;
 
     const c = canvas.getContext('2d', { alpha: false });
@@ -23,7 +23,7 @@ const Header = ({ homeRef }) => {
       let numDots = width <= 600 ? 20 : width <= 1024 ? 30 : 40;
       for (let i = 0; i < numDots; i++) {
         const radius = Math.random() * 10 + 2;
-        let x = Math.random() * (window.innerWidth - radius * 2) + radius;
+        let x = Math.random() * (document.body.clientWidth - radius * 2) + radius;
         let y = Math.random() * (window.innerHeight - radius * 2) + radius;
         let dx = Math.random() - 0.5 * 5;
         let dy = Math.random() - 0.5 * 5;
@@ -34,7 +34,7 @@ const Header = ({ homeRef }) => {
     };
 
     const animate = () => {
-      c.clearRect(0, 0, window.innerWidth, window.innerHeight);
+      c.clearRect(0, 0, document.body.clientWidth, window.innerHeight);
 
       circles.forEach((circle) => circle.update());
       window.requestAnimationFrame(animate);
@@ -46,7 +46,7 @@ const Header = ({ homeRef }) => {
     });
 
     window.addEventListener('resize', () => {
-      canvas.width = window.innerWidth;
+      canvas.width = document.body.clientWidth;
       canvas.height = window.innerHeight;
 
       init();
