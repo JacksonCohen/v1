@@ -129,3 +129,36 @@ export const Submit = styled('button', {
     backgroundColor: '$accent1',
   },
 });
+
+export const StatusContainer = styled('div', {
+  overflow: 'hidden',
+});
+
+export const ContactStatus = styled('div', {
+  display: 'flex',
+  justifyContent: 'center',
+  color: '$dark1',
+  width: '100%',
+  height: '20px',
+  marginBottom: '5px',
+  padding: '5px 0',
+  fontSize: '$f0',
+  borderRadius: '2px',
+  marginTop: '-100%',
+  transition: 'all 3s',
+
+  '&.expanded': {
+    marginTop: '0',
+  },
+
+  variants: {
+    color: {
+      red: {
+        backgroundColor: '$red',
+      },
+      green: {
+        backgroundColor: '$green',
+      },
+    },
+  },
+});

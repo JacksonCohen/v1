@@ -1,9 +1,11 @@
-import { ChangeEvent, MutableRefObject, useReducer } from 'react';
+import { ChangeEvent, FormEvent, MutableRefObject, useReducer, useState } from 'react';
 import emailjs from 'emailjs-com';
 import {
+  ContactStatus,
   Form,
   Input,
   Section,
+  StatusContainer,
   Submit,
   Subtitle,
   Textarea,
@@ -34,6 +36,7 @@ const stateReducer = (state: State, newState: any) => ({ ...state, ...newState }
 
 const Contact = ({ contactRef }: ContactProps) => {
   const [userInput, setUserInput] = useReducer(stateReducer, initialState);
+  const [sentStatus, setSentStatus] = useState<'SUCCESS' | 'ERROR' | ''>();
   const [inViewRef, inView] = useInView({ triggerOnce: true });
 
   const handleChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
@@ -44,17 +47,17 @@ const Contact = ({ contactRef }: ContactProps) => {
 
   const resetForm = () => {
     setUserInput(initialState);
+    setSentStatus('');
   };
 
-  const sendEmail = () => {
-    const message = (
-      <>
-        <h1>Message from {userInput.name}</h1>
+  const toggleExpand = () => {
+    const el = document.getElementById('expand');
+    setTimeout(() => el.classList.toggle('expanded'), 0);
+  };
 
-        <div>{userInput.message}</div>
-        <div>You can reply at the following email: {userInput.email}</div>
-      </>
-    );
+  const sendEmail = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const message = `Message from ${userInput.name} (${userInput.email}): ${userInput.message}`;
     const templateParams = {
       messageHtml: message,
     };
@@ -66,11 +69,16 @@ const Contact = ({ contactRef }: ContactProps) => {
         templateParams,
         process.env.REACT_APP_EMAILJS_USER_ID
       )
-      .then((res: any) => {
+      .then(() => {
+        setSentStatus('SUCCESS');
+        toggleExpand();
         resetForm();
-        console.log(res, 'Success');
       })
-      .catch((err) => console.error(err));
+      .catch((err) => {
+        setSentStatus('ERROR');
+        toggleExpand();
+        console.error(err);
+      });
   };
 
   return (
@@ -87,6 +95,7 @@ const Contact = ({ contactRef }: ContactProps) => {
         </Subtitle>
 
         <Form
+          onSubmit={sendEmail}
           ref={inViewRef}
           width={{ '@bp0': 'sm', '@bp1': 'md' }}
           className={inView ? 'pop-in' : ''}
@@ -113,12 +122,19 @@ const Contact = ({ contactRef }: ContactProps) => {
             onChange={handleChange}
             required
           />
-          {/* <div
-            className='g-recaptcha'
-            data-sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
-          ></div> */}
+          <StatusContainer>
+            {sentStatus === 'SUCCESS' ? (
+              <ContactStatus color='green' id='expand'>
+                Message sent successfully!
+              </ContactStatus>
+            ) : sentStatus === 'ERROR' ? (
+              <ContactStatus color='red'>Error sending message.</ContactStatus>
+            ) : (
+              ''
+            )}
+          </StatusContainer>
 
-          <Submit type='submit' onClick={sendEmail}>
+          <Submit type='submit' disabled={!!sentStatus}>
             Submit
           </Submit>
         </Form>
