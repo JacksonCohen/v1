@@ -6,6 +6,7 @@ export const Section = styled('section', {
   justifyContent: 'center',
   alignItems: 'center',
   background: '$dark0',
+  overflowX: 'hidden',
 });
 
 export const Wrapper = styled('div', {
@@ -56,9 +57,4 @@ export const CallToAction = styled('button', {
       transform: 'rotate(90deg)',
     },
   },
-});
-
-export const Canvas = styled('canvas', {
-  border: '1px solid black',
-  position: 'absolute',
 });
