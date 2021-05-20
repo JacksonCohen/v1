@@ -4,7 +4,14 @@
 <h1 align="center">
   jacksoncohen.dev
 </h1>
-
+<p align="center">
+  Built with <a href="https://reactjs.org/" target="_blank">React</a> and hosted with <a href="https://www.netlify.com/" target="_blank">Netlify</a>
+</p>
+<p align="center">
+  <a href="https://app.netlify.com/sites/jacksoncohen/deploys" target="_blank">
+    <img src="https://api.netlify.com/api/v1/badges/1963b488-7b78-48c9-9e2d-6fb5e47ab3af/deploy-status" alt="Netlify Status" />
+  </a>
+</p>
 <img src="https://user-images.githubusercontent.com/44987667/118887537-80466880-b8c8-11eb-80b4-70df9d32d34b.gif" width="100%" />
 
 ## 🛠 Installation & Set Up
@@ -35,7 +42,7 @@
    ```sh
    npm run build
    ```
-   
+
 2. Install `serve` to easily serve static server
 
    ```sh
