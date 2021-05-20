@@ -7,6 +7,7 @@ export const { styled, keyframes, global, config } = createCss({
       light1: '#ebe9e9',
       dark0: '#373850',
       dark1: '#232c33',
+      dark2: '#444550',
       accent0: '#ffa600',
       accent1: '#007cc6',
       green: '#04c986',

@@ -5,7 +5,7 @@ export const Section = styled('section', {
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  background: '$dark0',
+  background: '$dark2',
   overflowX: 'hidden',
 });
 

@@ -15,7 +15,7 @@ const popIn = keyframes({
 export const Section = styled('section', {
   padding: '100px 0',
   position: 'relative',
-  background: '#444550',
+  background: '$dark2',
   overflowX: 'hidden',
 });
 
