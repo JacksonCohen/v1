@@ -19,6 +19,12 @@ const Menu = ({ open, section }: MenuProps) => {
           About
         </NavLink>
         <NavLink
+          onClick={() => scrollTo('skills')}
+          className={section === 'Skills' ? 'selected' : ''}
+        >
+          Skills
+        </NavLink>
+        <NavLink
           onClick={() => scrollTo('portfolio')}
           className={section === 'Projects' ? 'selected' : ''}
         >

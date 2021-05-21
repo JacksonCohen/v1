@@ -11,3 +11,5 @@ export * from 'src/components/home/Menu';
 export * from 'src/components/home/Navbar';
 export * from 'src/components/home/Project';
 export * from 'src/components/home/Projects';
+export * from 'src/components/home/Skill';
+export * from 'src/components/home/Skills';
