@@ -16,7 +16,13 @@ export const Section = styled('section', {
         padding: '100px 40px',
       },
       md: {
-        padding: '100px 100px',
+        padding: '100px 10px',
+      },
+      lg: {
+        padding: '100px 40px',
+      },
+      xl: {
+        padding: '100px 40px',
       },
     },
   },
@@ -76,7 +82,8 @@ export const ProjectsContainer = styled('div', {
   variants: {
     width: {
       sm: { width: '100%' },
-      md: { width: '66%' },
+      md: { width: '100%' },
+      lg: { width: '75%' },
     },
   },
 });

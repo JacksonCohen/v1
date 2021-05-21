@@ -28,14 +28,22 @@ const Projects = ({ projectsRef }: ProjectsProps) => {
   }, []);
 
   return (
-    <Section id='portfolio' ref={projectsRef} padding={{ '@bp0': 'sm', '@bp1': 'md' }}>
+    <Section
+      id='portfolio'
+      ref={projectsRef}
+      padding={{ '@bp0': 'sm', '@bp1': 'md', '@bp2': 'lg', '@bp3': 'xl' }}
+    >
       <Wrapper>
         <Title fontSize={{ '@bp0': 'sm', '@bp1': 'md' }} className={inView ? 'slide-left' : ''}>
           Projects
         </Title>
-        <TitleBar height={{ '@bp0': 'sm', '@bp1': 'md' }} className={inView ? 'slide-right' : ''} />
+        <TitleBar
+          height={{ '@bp0': 'sm', '@bp1': 'md' }}
+          margin={{ '@bp0': 'sm', '@bp1': 'md' }}
+          className={inView ? 'slide-right' : ''}
+        />
 
-        <ProjectsContainer ref={inViewRef} width={{ '@bp0': 'sm', '@bp1': 'md' }}>
+        <ProjectsContainer ref={inViewRef} width={{ '@bp0': 'sm', '@bp1': 'md', '@bp2': 'lg' }}>
           {projects.map((project, index) => (
             <Project data={project} key={index} />
           ))}

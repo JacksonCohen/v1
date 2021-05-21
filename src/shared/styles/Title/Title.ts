@@ -51,6 +51,10 @@ export const TitleBar = styled('div', {
       sm: { height: '3px' },
       md: { height: '3px' },
     },
+    margin: {
+      sm: { marginBottom: '50px' },
+      md: { marginBottom: '50px' },
+    },
   },
 });
 

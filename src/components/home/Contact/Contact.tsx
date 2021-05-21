@@ -88,7 +88,11 @@ const Contact = ({ contactRef }: ContactProps) => {
         <Title fontSize={{ '@bp0': 'sm', '@bp1': 'md' }} className={inView ? 'slide-right' : ''}>
           Contact
         </Title>
-        <TitleBar height={{ '@bp0': 'sm', '@bp1': 'md' }} className={inView ? 'slide-left' : ''} />
+        <TitleBar
+          height={{ '@bp0': 'sm', '@bp1': 'md' }}
+          margin={{ '@bp0': 'sm', '@bp1': 'md' }}
+          className={inView ? 'slide-left' : ''}
+        />
 
         <Subtitle width={{ '@bp0': 'sm', '@bp1': 'md' }} className={inView ? 'slide-right' : ''}>
           Have a question or want to work together? I'd love to hear from you!

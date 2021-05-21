@@ -32,7 +32,11 @@ const About = ({ aboutRef }: AboutProps) => {
         <Title fontSize={{ '@bp0': 'sm', '@bp1': 'md' }} className={inView ? 'slide-left' : ''}>
           About
         </Title>
-        <TitleBar height={{ '@bp0': 'sm', '@bp1': 'md' }} className={inView ? 'slide-right' : ''} />
+        <TitleBar
+          height={{ '@bp0': 'sm', '@bp1': 'md' }}
+          margin={{ '@bp0': 'sm', '@bp1': 'md' }}
+          className={inView ? 'slide-right' : ''}
+        />
 
         <Content flex={{ '@bp0': 'sm', '@bp1': 'md', '@bp2': 'lg', '@bp3': 'xl' }}>
           <Text>

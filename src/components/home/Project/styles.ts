@@ -34,6 +34,7 @@ export const Wrapper = styled('div', {
     width: {
       sm: { width: '100%' },
       md: { width: '50%' },
+      lg: { width: '50%' },
     },
   },
 });

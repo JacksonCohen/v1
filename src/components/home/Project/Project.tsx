@@ -54,7 +54,7 @@ const Project = ({
   };
 
   return (
-    <Wrapper width={{ '@bp0': 'sm', '@bp1': 'md' }}>
+    <Wrapper width={{ '@bp0': 'sm', '@bp1': 'md', '@bp2': 'lg' }}>
       <Image src={images[0]} />
 
       <ProjectInfo>
