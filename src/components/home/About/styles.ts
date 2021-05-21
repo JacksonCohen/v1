@@ -112,6 +112,7 @@ export const Portrait = styled('img', {
   height: '300px',
   minWidth: '300px',
   objectFit: 'cover',
+  cursor: 'pointer',
 
   '&:active': {
     transform: 'scale(1.01)',
