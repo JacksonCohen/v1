@@ -77,10 +77,10 @@ const Contact = ({ contactRef }: ContactProps) => {
     <Section id='contact' ref={contactRef}>
       <Triangle />
       <Wrapper>
-        <Title fontSize={{ '@bp0': 'sm', '@bp1': 'md' }} className={inView ? 'slide-left' : ''}>
+        <Title fontSize={{ '@bp0': 'sm', '@bp1': 'md' }} className={inView ? 'slide-right' : ''}>
           Contact
         </Title>
-        <TitleBar height={{ '@bp0': 'sm', '@bp1': 'md' }} className={inView ? 'slide-right' : ''} />
+        <TitleBar height={{ '@bp0': 'sm', '@bp1': 'md' }} className={inView ? 'slide-left' : ''} />
 
         <Subtitle width={{ '@bp0': 'sm', '@bp1': 'md' }} className={inView ? 'slide-right' : ''}>
           Have a question or want to work together? I'd love to hear from you!
