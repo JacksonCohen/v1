@@ -1,0 +1,23 @@
+[
+  {
+    "label": "Front End Development",
+    "icon": "fab fa-react",
+    "description": "I use JavaScript (or TypeScript), HTML, and CSS with pre-processors such as CSS-in-JS and Webpack to create pixel-perfect websites and apps. React is my bread and butter and I ensure that my code is semantic, modular, and DRY."
+  },
+  {
+    "label": "Back End Development",
+    "icon": "fas fa-database",
+    "description": "I speak English, Chinese, Node.js and have dabbled in other languages like Python and PHP. I have a proven history of picking up new skills effectively and efficiently in short periods of time and enjoy doing so."
+  },
+  {
+    "label": "Responsive UI Design",
+    "icon": "fas fa-pencil-ruler",
+    "description": "I strive to develop and implement responsive and aesthetically pleasing interfaces for websites and apps that adapt to any type of device, platform, or browser.",
+    "highlight": "\"A user interface is like a joke. If you have to explain it, it's not that good.\" "
+  },
+  {
+    "label": "Experience in Design",
+    "icon": "far fa-object-group",
+    "description": "There have been far too many times where I've been trying to accomplish a simple task on a website, and ended up wanting to throw my computer out the window in frustration. Needless to say, user experience is an aspect of software I believe is vital to a successful product."
+  }
+]
