@@ -26,6 +26,7 @@ export const { styled, keyframes, global, config } = createCss({
     bp0: '(max-width: 480px)',
     bp1: '(min-width: 481px) and (max-width: 768px)',
     bp2: '(min-width: 769px) and (max-width: 1024px)',
-    bp3: '(min-width: 1025px)',
+    bp3: '(min-width: 1025px) and (max-width: 1366px)',
+    bp4: '(min-width: 1367px)',
   },
 });

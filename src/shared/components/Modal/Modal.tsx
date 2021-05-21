@@ -56,7 +56,7 @@ const Title = styled('div', {
   fontSize: '$f3',
 });
 
-const Body = styled('div', {
+const Body = styled('p', {
   padding: '20px',
   borderTop: '1px solid #eee',
   borderBottom: '1px solid #eee',
