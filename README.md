@@ -9,7 +9,7 @@
 </p>
 <p align="center">
   <a href="https://app.netlify.com/sites/jacksoncohen/deploys" target="_blank">
-    <img src="https://api.netlify.com/api/v1/badges/1963b488-7b78-48c9-9e2d-6fb5e47ab3af/deploy-status" alt="Netlify Status" />
+    <img src="https://api.netlify.com/api/v1/badges/f08f25ea-09b0-44e4-8f11-66c5884d5dcd/deploy-status" alt="Netlify Status" />
   </a>
 </p>
 <img src="https://user-images.githubusercontent.com/44987667/118887537-80466880-b8c8-11eb-80b4-70df9d32d34b.gif" width="100%" />
@@ -19,7 +19,7 @@
 1. Install [NVM](https://github.com/nvm-sh/nvm) and use Node v14.16.0
 
    ```sh
-   nvm install
+   nvm install 14.16.0
    nvm use 14.16.0
    ```
 
